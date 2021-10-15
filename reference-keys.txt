@@ -1,1 +1,4 @@
 vorwort
+ziel-und-struktur-des-buches
+was-ist-r
+was-ist-soziometrie
