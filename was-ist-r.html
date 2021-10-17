@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
-  <meta name="description" content="4 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <title>3 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
+  <meta name="description" content="3 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta property="og:title" content="3 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta name="twitter:title" content="3 Was ist R? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   
   
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ziel-und-struktur-des-buches.html"/>
+<link rel="prev" href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"/>
 <link rel="next" href="was-ist-soziometrie.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -119,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 </head>
 
@@ -134,9 +156,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
 <li class="chapter" data-level="2" data-path="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Erstes Beispiel: Soziometrie und soziale Netzwerke mit R</a></li>
-<li class="chapter" data-level="3" data-path="ziel-und-struktur-des-buches.html"><a href="ziel-und-struktur-des-buches.html"><i class="fa fa-check"></i><b>3</b> Ziel und Struktur des Buches</a></li>
-<li class="chapter" data-level="4" data-path="was-ist-r.html"><a href="was-ist-r.html"><i class="fa fa-check"></i><b>4</b> Was ist R?</a></li>
-<li class="chapter" data-level="5" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>5</b> Was ist Soziometrie?</a></li>
+<li class="chapter" data-level="3" data-path="was-ist-r.html"><a href="was-ist-r.html"><i class="fa fa-check"></i><b>3</b> Was ist R?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="was-ist-r.html"><a href="was-ist-r.html#statistische-datenanalyse"><i class="fa fa-check"></i><b>3.1</b> Statistische Datenanalyse</a></li>
+<li class="chapter" data-level="3.2" data-path="was-ist-r.html"><a href="was-ist-r.html#datenimport"><i class="fa fa-check"></i><b>3.2</b> Datenimport</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a></li>
 </ul>
 
       </nav>
@@ -154,16 +179,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="was-ist-r" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Was ist R?</h1>
-<p>R ist die</p>
+<div id="was-ist-r" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Was ist R?</h1>
+<p>R <span class="citation">(<a href="#ref-Rcore" role="doc-biblioref">R Core Team 2021</a>)</span> ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen <a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r">Beispiel</a> haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch <a href="http://dwoll.de/r/rKompakt.php">“R kompakt - Der schnelle Einstieg in die Datenanalyse”</a> <span class="citation">(<a href="#ref-wollschlager_r_2021" role="doc-biblioref">Wollschläger 2021</a>)</span>. Dort erfahren Sie alle Grundlagen zur Installation, Ausführung, Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R.</p>
+<div id="statistische-datenanalyse" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Statistische Datenanalyse</h2>
+<p>Wenn wir die Sozialbeziehungen in sozialen Gruppen betrachten wollen, so erscheint eine statistische Beschreibung der sozialen Gruppen sinnvoll. Wir sind z.B. interessiert an den persönlichen Merkmalen und Eigenschaften der Schüler_innen in einer Klasse (z.B. Alter, Geschlecht, Verhaltensweisen, usw.). Informationen dieser Art werden in Datensätzen gespeichert.</p>
+<blockquote>
+<p><strong>Beispieldatensatz</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Name</th>
+<th align="center">Alter</th>
+<th align="center">Geschlecht</th>
+<th align="center">Introvertiertes Verhalten (IV)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Susi</td>
+<td align="center">6</td>
+<td align="center">0</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">Eda</td>
+<td align="center">6</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">Ella</td>
+<td align="center">7</td>
+<td align="center">0</td>
+<td align="center">4</td>
+</tr>
+<tr class="even">
+<td align="center">Lena</td>
+<td align="center">6</td>
+<td align="center">0</td>
+<td align="center">3</td>
+</tr>
+<tr class="odd">
+<td align="center">Max</td>
+<td align="center">5</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+<tr class="even">
+<td align="center">Ali</td>
+<td align="center">6</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">Til</td>
+<td align="center">6</td>
+<td align="center">1</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>In R erstellen wir die 4 Variablen als Objekte mit dem Zuweisungspfeil <code>&lt;-</code>. Die Werte der jeweiligen Variablen werden dabei mit der Funktion <code>c()</code> zusammengefasst (<strong>c</strong>ombine values into a vector).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="was-ist-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Susi&quot;</span>, <span class="st">&quot;Eda&quot;</span>, <span class="st">&quot;Ella&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;Max&quot;</span>, <span class="st">&quot;Ali&quot;</span>, <span class="st">&quot;Til&quot;</span>)</span>
+<span id="cb6-2"><a href="was-ist-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>alter <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>)</span>
+<span id="cb6-3"><a href="was-ist-r.html#cb6-3" aria-hidden="true" tabindex="-1"></a>geschlecht <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb6-4"><a href="was-ist-r.html#cb6-4" aria-hidden="true" tabindex="-1"></a>IV <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
+<p>In R kann man sich stets alle Objekte anschauen indem man sie “aufruft.” Wir betrachten die Variable introvertiertes Verhalten (IV).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="was-ist-r.html#cb7-1" aria-hidden="true" tabindex="-1"></a>IV</span></code></pre></div>
+<pre><code>## [1] 4 1 4 3 2 1 2</code></pre>
+<p>Die 4 Variablen werden nun in einem Datensatz zusammengefasst. Die Variablen werden an die Funktion <code>data.frame()</code> übergeben. Wir erstellen mit der Funktion <code>data.frame()</code> ein neues Objekt (den Beispieldatensatz). Der Beispieldatensatz wird anschließend aufgerufen und angezeigt.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="was-ist-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a>beispieldatensatz <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(name, alter, geschlecht, IV)</span>
+<span id="cb9-2"><a href="was-ist-r.html#cb9-2" aria-hidden="true" tabindex="-1"></a>beispieldatensatz <span class="co"># Beispieldatensatz aufrufen</span></span></code></pre></div>
+<pre><code>##   name alter geschlecht IV
+## 1 Susi     6          0  4
+## 2  Eda     6          0  1
+## 3 Ella     7          0  4
+## 4 Lena     6          0  3
+## 5  Max     5          1  2
+## 6  Ali     6          1  1
+## 7  Til     6          1  2</code></pre>
+<p>Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (IV) der Kinder. Mit <code>beispieldatensatz$IV</code> können wir die entsprechende Variable aufrufen. Wir berechnen den Mittelwert mit der Funktion <code>mean()</code> und den getrimmten Mittelwert indem wir zusätzlich das Argument <code>trim = 0.2</code> festlegen. Die Variable <code>beispieldatensatz$IV</code> wird dabei an die Funktion <code>mean()</code> übergeben.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="was-ist-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a>beispieldatensatz<span class="sc">$</span>IV</span></code></pre></div>
+<pre><code>## [1] 4 1 4 3 2 1 2</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="was-ist-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(beispieldatensatz<span class="sc">$</span>IV)</span></code></pre></div>
+<pre><code>## [1] 2.428571</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="was-ist-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(beispieldatensatz<span class="sc">$</span>IV, <span class="at">trim =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>## [1] 2.4</code></pre>
+</div>
+<div id="datenimport" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Datenimport</h2>
+<p>In den allermeisten Fällen</p>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Rcore" class="csl-entry">
+R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-wollschlager_r_2021" class="csl-entry">
+Wollschläger, Daniel. 2021. <em>R Kompakt: <span>Der</span> Schnelle <span>Einstieg</span> in Die <span>Datenanalyse</span></em>. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-662-63075-4">https://doi.org/10.1007/978-3-662-63075-4</a>.
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="ziel-und-struktur-des-buches.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="was-ist-soziometrie.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
