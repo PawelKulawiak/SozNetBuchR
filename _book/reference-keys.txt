@@ -1,0 +1,8 @@
+fig:unnamed-chunk-4
+vorwort
+erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r
+was-ist-r
+statistische-datenanalyse
+datenimport
+was-ist-soziometrie
+literatur
