@@ -16,7 +16,7 @@ library(igraph)
 library(readxl)
 ```
 
-# Vorwort
+# Vorworte
 <span style="color: red;">***Wichtiger Hinweis***</span>: ***Dieses Buch ist in Entstehung begriffen (under construction) und wird sukzessive erweitert sowie verändert.***
 
 **Letzte Aktualisierung: `r Sys.time()`**
