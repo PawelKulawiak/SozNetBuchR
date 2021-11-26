@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
-  <meta name="description" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <title>Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
+  <meta name="description" content="Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta property="og:title" content="Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta name="twitter:title" content="Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="was-ist-r.html"/>
-<link rel="next" href="literatur.html"/>
+
+<link rel="next" href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -180,116 +180,30 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="was-ist-soziometrie" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Was ist Soziometrie?</h1>
-<p>Das Prinzip der soziometrischen Befragung wurde bereits im <a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r">Eingangsbeispiel</a> dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler_innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem “Verhältnis” zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als <em>soziometrisches Kriterium</em> bezeichnet.</p>
-<blockquote>
-<p><br />
-</p>
-<center>
-<strong>Beispiele für soziometrische Kriterien (Schüler_innen-Ebene)</strong>
-</center>
-<p><br />
-</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Soziometrisches Kriterium</th>
-<th align="center">Dimension (gemessenes Konstrukt)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</td>
-<td align="center">Gemeinsame Aktivitäten (Spiel)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse spielst du gerne?</td>
-<td align="center">Beliebtheit als Spielpartner_in</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse spielst du nicht so gerne?</td>
-<td align="center">Unbeliebtheit als Spielpartner_in</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)?</td>
-<td align="center">Außerschulische Lernaktivitäten</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule?</td>
-<td align="center">Außerschulische Kontakte (allgemein)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen?</td>
-<td align="center">Außerschulische Kontakte (Spielen)</td>
-</tr>
-<tr class="odd">
-<td align="center">Wen aus deiner Klasse magst du gerne?</td>
-<td align="center">Allgemeine Beliebtheit</td>
-</tr>
-<tr class="even">
-<td align="center">Wen aus deiner Klasse magst du nicht so gerne?</td>
-<td align="center">Allgemeine Unbeliebtheit</td>
-</tr>
-<tr class="odd">
-<td align="center">Neben wem aus deiner Klasse würdest du gerne sitzen?</td>
-<td align="center">Beliebtheit als Sitzpartner_in</td>
-</tr>
-<tr class="even">
-<td align="center">Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?</td>
-<td align="center">Unbeliebtheit als Sitzpartner_in</td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-<center>
-<strong>Beispiele für soziometrische Kriterien (Lehrkraft-Ebene)</strong>
-</center>
-<p><br />
-</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Soziometrisches Kriterium</th>
-<th align="center">Dimension (gemessenes Konstrukt)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Mit welchen Kolleg_innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?</td>
-<td align="center">Teamarbeit (Förderplanung)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?</td>
-<td align="center">Teamarbeit (Teamteaching)</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?</td>
-<td align="center">Teamarbeit (kollegiale Fallberatung)</td>
-</tr>
-</tbody>
-</table>
-</blockquote>
-<p>Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.</p>
-<p>Das soziometrische Kriterium sollte mit Bedacht formuliert werden:
-Welche Dimension einer Sozialbeziehung soll fokussiert werden?</p>
+<div id="header">
+<h1 class="title">Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</h1>
+<h2 class="subtitle"><em>Eine Einführung in die soziometrische Datenanalyse und soziale Netzwerkanalyse mit dem Statistikprogramm R</em></h2>
+<p class="author"><em>Pawel R. Kulawiak</em></p>
+</div>
+<div id="vorwort" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Vorwort</h1>
+<p><span style="color: red;"><strong><em>Wichtiger Hinweis</em></strong></span>: <strong><em>Dieses Buch ist in Entstehung begriffen (under construction) und wird sukzessive erweitert sowie verändert.</em></strong></p>
+<p><strong>Letzte Aktualisierung: 2021-11-26 14:25:18</strong></p>
+<p>Pädagogische Einrichtungen (Schulen, Kitas, Jugendfreizeiteinrichtungen, Sportvereine, therapeutische Wohngemeinschaften für Jugendliche, usw.) sind Orte der sozialen Interaktion, d.h. Kinder, Jugendliche, junge Erwachsene und pädagogische Fachkräfte pflegen und gestalten soziale Beziehungen miteinander sowie untereinander. Dieses Buch möchte wissenschaftliche sowie statistische Methoden zur Analyse sozialer Beziehungsstrukturen vorstellen und richtet sich daher explizit an pädagogische Fachkräfte (z.B. Lehrkräfte, Sonderpädagog_innen, Erzieher_innen, Sozialarbeiter_innen, usw.). Das vorliegende Buch orientiert sich dementsprechend an Beispielen aus der pädagogischen Praxis (vor allem aus der Schulpraxis).</p>
+<p>Dieses kleine Buch (bzw. Büchlein) bietet dabei eine Einführung in die Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte. Ein besonderes Augenmerk liegt hierbei auf der Verarbeitung sowie Analyse soziometrischer Daten und sozialer Netzwerkdaten mit dem Statistikprogramm R (insbesondere mit dem R-Zusatzpaket <em>igraph</em>). Dieses Buch ist keine umfassende Einführung in das Statistikprogramm R, sondern fokussiert sich vornehmlich auf die Analyse von sozialen Netzwerkdaten mit R. Grundkenntnisse der statistischen Datenanalyse und Datenverarbeitung mit R sind bei der Lektüre dieses Buches von Vorteil. Dennoch soll dieses Buch ein niedrigschwelliges Angebot sein und bietet deshalb viele R-Hilfestellungen und Verwiese auf R-Einstiegsliteratur.</p>
+<p>Hinweise und Anregungen zum Buch nehme ich gerne entgegen
+(<a href="mailto:kulawiak@uni-potsdam.de">kulawiak@uni-potsdam.de</a>).</p>
+<p>Ich wünsche Ihnen viel Spaß bei der Lektüre dieses kleinen Büchleins.</p>
+<p>Berlin, Oktober 2021</p>
+<p>Pawel R. Kulawiak</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="was-ist-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literatur.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -331,7 +245,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null

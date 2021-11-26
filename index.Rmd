@@ -3,7 +3,7 @@ title: "Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogisc
 author: "Pawel R. Kulawiak"
 subtitle: Eine Einführung in die soziometrische Datenanalyse und soziale Netzwerkanalyse mit dem Statistikprogramm R
 output:
-  #bookdown::pdf_book: default
+  bookdown::pdf_book: default
   bookdown::gitbook: default
 documentclass: book
 site: bookdown::bookdown_site
