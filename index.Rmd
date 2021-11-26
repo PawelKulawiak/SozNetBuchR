@@ -9,6 +9,7 @@ documentclass: book
 site: bookdown::bookdown_site
 bibliography: references.bib
 link-citations: true
+output_dir: "docs"
 ---
 
 ```{r setup, include=FALSE}

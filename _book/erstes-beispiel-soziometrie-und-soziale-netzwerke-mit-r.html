@@ -233,9 +233,9 @@ div.csl-indent {
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a>netzwerk <span class="ot">&lt;-</span> <span class="fu">graph_from_literal</span>(Susi<span class="sc">-+</span>Max, Susi<span class="sc">-+</span>Ali, Susi<span class="sc">-+</span>Til, Eda<span class="sc">-+</span>Lena, Ella, Lena<span class="sc">-+</span>Eda, Max<span class="sc">-+</span>Ali, Max<span class="sc">-+</span>Susi, Ali<span class="sc">-+</span>Max, Ali<span class="sc">-+</span>Susi, Til<span class="sc">-+</span>Susi)</span></code></pre></div>
 <p>Mit der Funktion <code>print_all()</code> können wir jederzeit die Informationen im Objekt <code>netzwerk</code> abrufen (also die Antworten der Kinder). Hierfür übergeben wir das Objekt <code>netzwerk</code> an die entsprechende Funktion.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_all</span>(netzwerk)</span></code></pre></div>
-<pre><code>## IGRAPH 740b777 DN-- 7 10 -- 
+<pre><code>## IGRAPH c593dfb DN-- 7 10 -- 
 ## + attr: name (v/c)
-## + edges from 740b777 (vertex names):
+## + edges from c593dfb (vertex names):
 ##  [1] Susi-&gt;Max  Susi-&gt;Ali  Susi-&gt;Til  Max -&gt;Susi Max -&gt;Ali  Ali -&gt;Susi
 ##  [7] Ali -&gt;Max  Til -&gt;Susi Eda -&gt;Lena Lena-&gt;Eda</code></pre>
 <p>Ein Bild sagt mehr als tausend Worte. Abschließend möchten wir daher die Antworten der Kinder visualisieren (Netzwerkvisualisierung). Wir übergeben das Objekt <code>netzwerk</code> an die Funktion <code>plot()</code> und definieren noch ein paar Eigenschaften der Abbildung, z.B. die Größe der Kreissymbole mit dem Argument <code>vertex.size = 30</code>.</p>
