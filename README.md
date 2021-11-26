@@ -1,2 +1,0 @@
-# SozNetBuchR
-Book (under construction)
