@@ -52,6 +52,7 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -155,13 +156,20 @@ div.csl-indent {
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
-<li class="chapter" data-level="2" data-path="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Erstes Beispiel: Soziometrie und soziale Netzwerke mit R</a></li>
+<li class="chapter" data-level="2" data-path="soziometrie-und-soziale-netzwerke-mit-r.html"><a href="soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Soziometrie und soziale Netzwerke mit R</a></li>
 <li class="chapter" data-level="3" data-path="was-ist-r.html"><a href="was-ist-r.html"><i class="fa fa-check"></i><b>3</b> Was ist R?</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="was-ist-r.html"><a href="was-ist-r.html#statistische-datenanalyse"><i class="fa fa-check"></i><b>3.1</b> Statistische Datenanalyse</a></li>
 <li class="chapter" data-level="3.2" data-path="was-ist-r.html"><a href="was-ist-r.html#datenimport"><i class="fa fa-check"></i><b>3.2</b> Datenimport</a></li>
+<li class="chapter" data-level="3.3" data-path="was-ist-r.html"><a href="was-ist-r.html#datenvisualisierung"><i class="fa fa-check"></i><b>3.3</b> Datenvisualisierung</a></li>
+<li class="chapter" data-level="3.4" data-path="was-ist-r.html"><a href="was-ist-r.html#der-pipe-operator"><i class="fa fa-check"></i><b>3.4</b> Der Pipe-Operator |&gt;</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a></li>
+<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#ethik"><i class="fa fa-check"></i><b>4.1</b> Ethik</a></li>
+<li class="chapter" data-level="4.2" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#datenschutz"><i class="fa fa-check"></i><b>4.2</b> Datenschutz</a></li>
+<li class="chapter" data-level="4.3" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#geschichte-der-soziometrie"><i class="fa fa-check"></i><b>4.3</b> Geschichte der Soziometrie</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="literatur.html"><a href="literatur.html"><i class="fa fa-check"></i><b>5</b> Literatur</a></li>
 </ul>
 
@@ -182,106 +190,131 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="was-ist-soziometrie" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Was ist Soziometrie?</h1>
-<p>Das Prinzip der soziometrischen Befragung wurde bereits im <a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r">Eingangsbeispiel</a> dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler_innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem “Verhältnis” zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als <em>soziometrisches Kriterium</em> bezeichnet.</p>
+<p>Das Prinzip der soziometrischen Befragung wurde bereits im <a href="soziometrie-und-soziale-netzwerke-mit-r.html#soziometrie-und-soziale-netzwerke-mit-r">Eingangsbeispiel</a> dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler_innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem “Verhältnis” zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als <em>soziometrisches Kriterium</em> bezeichnet.</p>
 <blockquote>
-<p><br />
-</p>
-<center>
-<strong>Beispiele für soziometrische Kriterien (Schüler_innen-Ebene)</strong>
-</center>
-<p><br />
-</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Soziometrisches Kriterium</th>
-<th align="center">Dimension (gemessenes Konstrukt)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</td>
-<td align="center">Gemeinsame Aktivitäten (Spiel)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse spielst du gerne?</td>
-<td align="center">Beliebtheit als Spielpartner_in</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse spielst du nicht so gerne?</td>
-<td align="center">Unbeliebtheit als Spielpartner_in</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)?</td>
-<td align="center">Außerschulische Lernaktivitäten</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule?</td>
-<td align="center">Außerschulische Kontakte (allgemein)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen?</td>
-<td align="center">Außerschulische Kontakte (Spielen)</td>
-</tr>
-<tr class="odd">
-<td align="center">Wen aus deiner Klasse magst du gerne?</td>
-<td align="center">Allgemeine Beliebtheit</td>
-</tr>
-<tr class="even">
-<td align="center">Wen aus deiner Klasse magst du nicht so gerne?</td>
-<td align="center">Allgemeine Unbeliebtheit</td>
-</tr>
-<tr class="odd">
-<td align="center">Neben wem aus deiner Klasse würdest du gerne sitzen?</td>
-<td align="center">Beliebtheit als Sitzpartner_in</td>
-</tr>
-<tr class="even">
-<td align="center">Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?</td>
-<td align="center">Unbeliebtheit als Sitzpartner_in</td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-<center>
-<strong>Beispiele für soziometrische Kriterien (Lehrkraft-Ebene)</strong>
-</center>
-<p><br />
-</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Soziometrisches Kriterium</th>
-<th align="center">Dimension (gemessenes Konstrukt)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Mit welchen Kolleg_innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?</td>
-<td align="center">Teamarbeit (Förderplanung)</td>
-</tr>
-<tr class="even">
-<td align="center">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?</td>
-<td align="center">Teamarbeit (Teamteaching)</td>
-</tr>
-<tr class="odd">
-<td align="center">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?</td>
-<td align="center">Teamarbeit (kollegiale Fallberatung)</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Beispiele für soziometrische Kriterien:</strong><br />
+<strong>Schüler_innen-Ebene</strong></p>
 </blockquote>
-<p>Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.</p>
+<template id="d2724864-7f7c-42a2-aab8-af924c1adddd"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid tabwid_left"><style>.cl-24710a4a{}.cl-2469e346{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-2469e347{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-2469e348{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-2469e349{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-246a0a38{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-246a0a39{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-246a0a3a{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-246a0a3b{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-246a0a3c{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-246a0a3d{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-24710a4a'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-246a0a3d"><p class="cl-2469e348"><span class="cl-2469e346">Soziometrisches Kriterium</span></p></td><td class="cl-246a0a3c"><p class="cl-2469e349"><span class="cl-2469e346">Dimension/<br>gemessenes Konstrukt</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Gemeinsame Aktivitäten<br>(Spiel)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse spielst du gerne?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Beliebtheit als<br>Spielpartner_in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse spielst du nicht so gerne?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Unbeliebtheit als<br>Spielpartner_in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Außerschulische<br>Lernaktivitäten</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Außerschulische Kontakte<br>(allgemein)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Außerschulische Kontakte<br>(Spielen)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Wen aus deiner Klasse magst du gerne?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Allgemeine<br>Beliebtheit</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Wen aus deiner Klasse magst du nicht so gerne?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Allgemeine<br>Unbeliebtheit</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a39"><p class="cl-2469e348"><span class="cl-2469e347">Neben wem aus deiner Klasse würdest du gerne sitzen?</span></p></td><td class="cl-246a0a38"><p class="cl-2469e349"><span class="cl-2469e347">Beliebtheit als<br>Sitzpartner_in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-246a0a3b"><p class="cl-2469e348"><span class="cl-2469e347">Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?</span></p></td><td class="cl-246a0a3a"><p class="cl-2469e349"><span class="cl-2469e347">Unbeliebtheit als<br>Sitzpartner_in</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="7521b26d-00be-4652-a63a-57ea829cb611"></div>
+<script>
+var dest = document.getElementById("7521b26d-00be-4652-a63a-57ea829cb611");
+var template = document.getElementById("d2724864-7f7c-42a2-aab8-af924c1adddd");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:left;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<blockquote>
+<p><strong>Beispiele für soziometrische Kriterien:</strong><br />
+<strong>(Lehrkraft-Ebene)</strong></p>
+</blockquote>
+<template id="8b384d06-cdc1-4799-88aa-ccbd2ffe565b"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid tabwid_left"><style>.cl-248ede1c{}.cl-247ff438{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-247ff439{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-247ff43a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-247ff43b{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-24801b2a{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-24801b2b{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-24801b2c{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-24801b2d{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-24801b2e{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-24801b2f{width:165.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-248ede1c'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-24801b2f"><p class="cl-247ff43a"><span class="cl-247ff438">Soziometrisches Kriterium</span></p></td><td class="cl-24801b2e"><p class="cl-247ff43b"><span class="cl-247ff438">Dimension/<br>gemessenes Konstrukt</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-24801b2b"><p class="cl-247ff43a"><span class="cl-247ff439">Mit welchen Kolleg_innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?</span></p></td><td class="cl-24801b2a"><p class="cl-247ff43b"><span class="cl-247ff439">Teamarbeit<br>(Förderplanung)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-24801b2b"><p class="cl-247ff43a"><span class="cl-247ff439">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?</span></p></td><td class="cl-24801b2a"><p class="cl-247ff43b"><span class="cl-247ff439">Teamarbeit<br>(Teamteaching)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-24801b2d"><p class="cl-247ff43a"><span class="cl-247ff439">Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?</span></p></td><td class="cl-24801b2c"><p class="cl-247ff43b"><span class="cl-247ff439">Teamarbeit<br>(kollegiale Fallberatung)</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="a2b76a8c-58cd-4709-a483-1b941f4c5fda"></div>
+<script>
+var dest = document.getElementById("a2b76a8c-58cd-4709-a483-1b941f4c5fda");
+var template = document.getElementById("8b384d06-cdc1-4799-88aa-ccbd2ffe565b");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:left;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
 <p>Das soziometrische Kriterium sollte mit Bedacht formuliert werden:
-Welche Dimension einer Sozialbeziehung soll fokussiert werden?</p>
+Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug)?</p>
+<p>Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.</p>
+<div id="ethik" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Ethik</h2>
+</div>
+<div id="datenschutz" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Datenschutz</h2>
+</div>
+<div id="geschichte-der-soziometrie" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Geschichte der Soziometrie</h2>
+</div>
 </div>
             </section>
 

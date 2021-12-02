@@ -14,12 +14,20 @@ link-citations: true
 ```{r setup, include=FALSE}
 library(igraph)
 library(readxl)
+library(ggplot2)
+library(flextable)
+options(width = 60)
 ```
-
+\let\cleardoublepage\clearpage
 # Vorwort
+![](images\cover.png)
+\newpage
 <span style="color: red;">***Wichtiger Hinweis***</span>: ***Dieses Buch ist in Entstehung begriffen (under construction) und wird sukzessive erweitert sowie verändert.***
 
 **Letzte Aktualisierung: `r Sys.time()`**
+
+**Link zur Online-Version:** https://pawelkulawiak.github.io/SozNetBuchR/  
+**Link zur PDF-Version:** https://pawelkulawiak.github.io/SozNetBuchR/_main.pdf
 
 Pädagogische Einrichtungen (Schulen, Kitas, Jugendfreizeiteinrichtungen, Sportvereine, therapeutische Wohngemeinschaften für Jugendliche, usw.) sind Orte der sozialen Interaktion, d.h. Kinder, Jugendliche, junge Erwachsene und pädagogische Fachkräfte pflegen und gestalten soziale Beziehungen miteinander sowie untereinander. Dieses Buch möchte wissenschaftliche sowie statistische Methoden zur Analyse sozialer Beziehungsstrukturen vorstellen und richtet sich daher explizit an pädagogische Fachkräfte (z.B. Lehrkräfte, Sonderpädagog_innen, Erzieher_innen, Sozialarbeiter_innen, usw.). Das vorliegende Buch orientiert sich dementsprechend an Beispielen aus der pädagogischen Praxis (vor allem aus der Schulpraxis).
 
@@ -34,12 +42,12 @@ Berlin, Oktober 2021
 
 Pawel R. Kulawiak
 
-# Erstes Beispiel: Soziometrie und soziale Netzwerke mit R
+# Soziometrie und soziale Netzwerke mit R
 In diesem Buch erlernen Sie die Analyse sozialer Netzwerkdaten mit dem Statistikprogramm R [@Rcore]. Ich möchte Ihnen daher zu Beginn (ohne weitere Erläuterungen zu R) die Vorzüge der Programmiersprache R bei der Analyse sozialer Netzwerkdaten demonstrieren.
 
 >**Fallbeispiel**
 >
->Eine Grundschullehrkraft hat eine kleine Klasse der Jahrgangsstufe 1 übernommen (7 Kinder). Wenn die Schüler_innen der gesamten Schule in der großen Pause auf dem Schulhof zusammen spielen, dann ist es allerdings sehr unübersichtlich und die Lehrkraft kann nicht alle Aktivitäten der Kinder gleichermaßen im Auge behalten. Die Lehrkraft möchte daher einen genaueren Einblick in das "soziale Miteinander" ihrer Klasse erhalten und startet deshalb eine **soziometrische Befragung** der einzelnen Schüler_innen: *Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?*
+>Eine Grundschullehrkraft hat eine kleine Klasse der Jahrgangsstufe 1 übernommen (7 Kinder). Wenn die Schüler_innen der gesamten Schule in der großen Pause auf dem Schulhof zusammen spielen, dann ist es allerdings sehr unübersichtlich und die Lehrkraft kann nicht alle Aktivitäten der Kinder gleichermaßen im Auge behalten. Die Lehrkraft möchte daher einen genaueren Einblick in das "soziale Miteinander" ihrer neuen Klasse erhalten und startet deshalb eine **soziometrische Befragung** der einzelnen Schüler_innen: *Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?*
 >
 >Die Lehrkraft notiert die Antworten der Kinder in einer Tabelle.
 >
@@ -56,29 +64,37 @@ In diesem Buch erlernen Sie die Analyse sozialer Netzwerkdaten mit dem Statistik
 Die Tabelle mit den Antworten bietet schon eine gewisse Übersichtlichkeit, da zum Beispiel ersichtlich wird, dass Ella bei der Befragung keine Mitschüler_innen benannt hat und auch von keinen Mitschüler_innen benannt wurde (Ella hat mit niemandem gespielt und niemand hat mit Ella gespielt). Die Lehrkraft möchte die soziometrischen Daten weiter verarbeiten und überträgt die Antworten der Kinder deshalb in das Statistikprogramm R. Zuvor wird mit den ersten beiden R-Befehlen (bzw. R-Funktionen) das R-Zusatzpaket *igraph* installiert und anschließend geladen. *igraph* [@igraph] ist ein spezifisches R-Zusatzpaket zur Verarbeitung und Analyse von Netzwerkdaten.
 
 ```{r eval = F}
-install.packages("igraph") # R-Zusatzpaket igraph laden
-library(igraph) # R-Zusatzpaket igraph installieren
+install.packages("igraph") # R-Zusatzpaket igraph installieren
+library(igraph) # R-Zusatzpaket igraph laden
 ```
 
-Anschließend werden alle Antworten der Kinder in der Form `Susi-+Max` (Susi *...hat gespielt mit...* Max) an die Funktion `graph_from_literal()` übergeben (eine Funktion des Zusatzpaketes *igraph*). Da Ella mit niemandem gespielt hat, erfolgt für Ella ausschließlich die Übergabe des Namen `Ella`. Alle Antworten der Kinder werden dann mit dem Zuweisungspfeil `<-` als Objekt `netzwerk` gespeichert.
+Anschließend werden alle Antworten der Kinder in der Form `Susi -+ Max` (Susi *...hat gespielt mit...* Max) an die Funktion `graph_from_literal()` übergeben (eine Funktion des Zusatzpaketes *igraph*). Da Ella mit niemandem gespielt hat, erfolgt für Ella ausschließlich die Übergabe des Namen `Ella`. Alle Antworten der Kinder werden dann mit dem Zuweisungspfeil `<-` als Objekt `netzwerk` gespeichert.
 
 ```{r}
-netzwerk <- graph_from_literal(Susi-+Max, Susi-+Ali, Susi-+Til, Eda-+Lena, Ella, Lena-+Eda, Max-+Ali, Max-+Susi, Ali-+Max, Ali-+Susi, Til-+Susi)
+netzwerk <-
+  graph_from_literal(Susi -+ Max, Susi -+ Ali, Susi -+ Til,
+                     Eda -+ Lena, Ella, Lena -+ Eda,
+                     Max -+ Ali, Max -+ Susi, Ali -+ Max,
+                     Ali -+ Susi, Til -+ Susi)
 ```
 
-Mit der Funktion `print_all()` können wir jederzeit die Informationen im Objekt `netzwerk` abrufen (also die Antworten der Kinder). Hierfür übergeben wir das Objekt `netzwerk` an die entsprechende Funktion.
+Mit der Funktion `print_all()` können wir jederzeit die Informationen im Objekt `netzwerk` abrufen (also die Antworten der Kinder). Hierfür übergeben wir das Objekt `netzwerk` an die entsprechende Funktion. Die Antworten der Kinder erscheinen in der Form `Susi->Max` (Susi *...hat gespielt mit...* Max).
 
 ```{r}
 print_all(netzwerk)
 ```
 
-Ein Bild sagt mehr als tausend Worte. Abschließend möchten wir daher die Antworten der Kinder visualisieren (Netzwerkvisualisierung). Wir übergeben das Objekt `netzwerk` an die Funktion `plot()` und definieren noch ein paar Eigenschaften der Abbildung, z.B. die Größe der Kreissymbole mit dem Argument `vertex.size = 30`.
+Ein Bild sagt mehr als tausend Worte. Abschließend möchten wir daher die Antworten der Kinder visualisieren (Netzwerkvisualisierung). Wir übergeben daher das Objekt `netzwerk` an die Funktion `plot()` (*plotten*) und definieren noch ein paar Eigenschaften der Abbildung, z.B. die Größe der Kreissymbole mit dem Argument `vertex.size = 30`.
 
-```{r fig.cap = 'Soziales Netzwerk ("*Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?*")'}
-plot(netzwerk, vertex.size = 30, edge.arrow.size = 0.5, frame = TRUE)
+```{r}
+par(mar = c(0, 0, 0, 0))
+# Ränder (margins) der Grafik auf null setzten
+plot(netzwerk, vertex.size = 30)
 ```
 
-In der Grafik sehen wir auf den ersten Blick spannende Netzwerkstrukturen: Eine Triade (Max, Ali, Susi), zwei Dyaden (Eda und Lena sowie Susi und Til) und das isolierte Kind ohne Spielpartner_innen (Ella).
+**Soziales Netzwerk:** *Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?*
+
+Die Grafik ist eine Repräsentation der Antworten der Kinder (mit Pfeilen und Kreissymbolen). In der Grafik sehen wir auf den ersten Blick spannende soziale Netzwerkstrukturen: Eine Triade (Max, Ali, Susi), zwei Dyaden (Eda und Lena sowie Susi und Til) und das isolierte Kind ohne Spielpartner_innen (Ella).
 
 # Was ist R?
 R [@Rcore] ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen [Beispiel](#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r) haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch ["R kompakt - Der schnelle Einstieg in die Datenanalyse"](http://dwoll.de/r/rKompakt.php) [@wollschlager_r_2021]. Dort erfahren Sie alle Grundlagen zur Installation und Ausführung von R sowie zur Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R.
@@ -107,7 +123,7 @@ geschlecht <- c(0, 0, 0, 0, 1, 1, 1)
 IV <- c(4, 1, 4, 3, 2, 1, 2)
 ```
 
-In R kann man sich stets alle Objekte anschauen, indem man sie einfach "aufruft". Wir betrachten die Variable introvertiertes Verhalten (IV).
+In R kann man sich stets alle Objekte anschauen, indem man sie einfach "aufruft". Wir betrachten die Variable introvertiertes Verhalten (`IV`).
 
 ```{r}
 IV # Variable aufrufen und anzeigen
@@ -120,10 +136,11 @@ beispieldatensatz <- data.frame(name, alter, geschlecht, IV)
 beispieldatensatz # Beispieldatensatz aufrufen und anzeigen
 ```
 
-Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (IV) der Kinder. Mit `beispieldatensatz$IV` können wir die entsprechende Variable des Beispieldatensatzes aufrufen. Wir berechnen den Mittelwert mit der Funktion `mean()` und den getrimmten Mittelwert indem wir zusätzlich das Argument `trim = 0.2` festlegen. Die Variable `beispieldatensatz$IV` wird dabei an die Funktion `mean()` übergeben.
+Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (`IV`) der Kinder. Mit `beispieldatensatz$IV` können wir die entsprechende Variable des Beispieldatensatzes aufrufen. Wir berechnen den Mittelwert mit der Funktion `mean()` und den getrimmten Mittelwert indem wir zusätzlich das Argument `trim = 0.2` festlegen. Die Variable `beispieldatensatz$IV` wird dabei an die Funktion `mean()` übergeben.
 
 ```{r}
-beispieldatensatz$IV # Variable des Beispieldatensatzes aufrufen und anzeigen
+# Variable des Beispieldatensatzes aufrufen und anzeigen
+beispieldatensatz$IV
 mean(beispieldatensatz$IV) # Mittelwert
 mean(beispieldatensatz$IV, trim = 0.2) # Getrimmter Mittelwert
 ```
@@ -131,7 +148,7 @@ mean(beispieldatensatz$IV, trim = 0.2) # Getrimmter Mittelwert
 ## Datenimport
 In den allermeisten Fällen sind die zu analysierenden Daten als Excel- oder CSV-Dateien auf der Festplatte oder in einer Cloud gespeichert. Für die Analysen mit R müssen diese Daten zunächst eingelesen werden (Datenimport).
 
-Hier finden Sie den bekannten Beispieldatensatz als CSV-Datei ([Link zur CSV-Datei](https://figshare.com/ndownloader/files/31108225)) und als Excel-Datei ([Link zur Excel-Datei](https://figshare.com/ndownloader/files/31108216)). Speichern Sie die beiden Dateien auf Ihrer Festplatte, z.B. auf dem Desktop.
+Hier finden Sie den bekannten Beispieldatensatz als CSV-Datei ([Link zur CSV-Datei](https://figshare.com/ndownloader/files/31108225)^[https://figshare.com/ndownloader/files/31108225]) und als Excel-Datei ([Link zur Excel-Datei](https://figshare.com/ndownloader/files/31108216)^[https://figshare.com/ndownloader/files/31108216]). Speichern Sie die beiden Dateien auf Ihrer Festplatte, z.B. auf dem Desktop.
 
 In R gibt es viele Wege um Daten einzulesen. Hier nur ein Beispiel für die CSV-Datei. Sie müssen den Dateipfad (Speicherort und Dateinamen mit Dateiendung) an die Funktion `read.csv2()` übergeben.
 
@@ -156,7 +173,8 @@ daten <- read_excel(file.choose())
 Die Daten können aber auch direkt aus dem Internet eingelesen werden. Hierfür benötigen wir lediglich den Link zur Datei (dies kann auch ein geteilter Link zu einer Datei in einer Cloud sein).
 
 ```{r}
-daten <- read.csv2("https://figshare.com/ndownloader/files/31108225")
+daten <-
+  read.csv2("https://figshare.com/ndownloader/files/31108225")
 ```
 
 In allen Fällen war das einlesen des Beispieldatensatzes erfolgreich und wir können den Datensatz aufrufen.
@@ -165,43 +183,130 @@ In allen Fällen war das einlesen des Beispieldatensatzes erfolgreich und wir k�
 daten
 ```
 
-# Was ist Soziometrie?
-Das Prinzip der soziometrischen Befragung wurde bereits im [Eingangsbeispiel](#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r) dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler_innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem "Verhältnis" zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als *soziometrisches Kriterium* bezeichnet.
+## Datenvisualisierung
 
-> \
->
-> <center>**Beispiele für soziometrische Kriterien (Schüler_innen-Ebene)**</center>
-> \
->
-> Soziometrisches Kriterium | Dimension (gemessenes Konstrukt)
-> :-:|:-:
-> Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt? | Gemeinsame Aktivitäten (Spiel)
-> Mit wem aus deiner Klasse spielst du gerne? | Beliebtheit als Spielpartner_in
-> Mit wem aus deiner Klasse spielst du nicht so gerne? | Unbeliebtheit als Spielpartner_in
-> Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)? | Außerschulische Lernaktivitäten
-> Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule? | Außerschulische Kontakte (allgemein)
-> Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen? | Außerschulische Kontakte (Spielen)
-> Wen aus deiner Klasse magst du gerne? | Allgemeine Beliebtheit
-> Wen aus deiner Klasse magst du nicht so gerne? | Allgemeine Unbeliebtheit
-> Neben wem aus deiner Klasse würdest du gerne sitzen? | Beliebtheit als Sitzpartner_in
-> Neben wem aus deiner Klasse würdest du nicht so gerne sitzen? | Unbeliebtheit als Sitzpartner_in
-> \
->
-> <center>**Beispiele für soziometrische Kriterien (Lehrkraft-Ebene)**</center>
-> \
->
-> Soziometrisches Kriterium | Dimension (gemessenes Konstrukt)
-> :-:|:-:
-> Mit welchen Kolleg_innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt? | Teamarbeit (Förderplanung)
-> Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)? | Teamarbeit (Teamteaching)
-> Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt? | Teamarbeit (kollegiale Fallberatung)
+R eignet sich vorzüglich zur Visualisierung von Daten. Wir erstellen ein Histogramm der Variable `IV`.
+
+```{r, fig.height = 3}
+hist(daten$IV)
+```
+
+Mittlerweile sind die Grafikbefehle des Zusatzpaketes *ggplot2* [@ggplot] der Standard bei der Erstellung von Grafiken in R.
+
+```{r eval = F}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+Wir erstellen ein Histogramm mit den Grafikbefehlen des Zusatzpaketes *ggplot2*.
+
+```{r, message = F, warning = F, fig.height = 2.5}
+ggplot(data = daten, mapping = aes(IV)) + geom_histogram()
+```
+
+## Der Pipe-Operator |>
+R-Funktionen können ineinander geschachtelt werden. Dies ist z.B. notwendig bei der Visualisierung einer Häufigkeitstabelle. Zunächst erstellen wir die benötigte Häufigkeitstabelle der Variable `alter`.
+
+```{r}
+table(daten$alter)
+```
+
+Zur Visualisierung der Häufigkeitstabelle wird `table(daten$alter)` an den Befehl `pie()` (Kreisdiagramm/Tortendiagramm) übergeben.
+
+```{r}
+pie(table(daten$alter), main = "Alter in Jahren")
+```
+
+Diese Schachtelung von Befehlen (`table()` innerhalb von `pie()`) ist unübersichtlich. Eine objektorientierte Programmierung ist übersichtlicher (auch dies führt zur erfolgreichen Visualiserung).
+
+```{r eval = F}
+table_alter <- table(daten$alter)
+pie(table_alter, main = "Alter in Jahren")
+```
+
+Noch übersichtlicher ist die "Weitergabe" der Häufigkeitstabelle an den Grafik-Befehl mittels Pipe-Operator `|>` (auch dies führt zur erfolgreichen Visualiserung). Der Pipe-Operator ist ein sehr nützliches Werkzeug.
+
+```{r eval = F}
+table(daten$alter) |> pie(main = "Alter in Jahren")
+```
+
+# Was ist Soziometrie?
+
+Das Prinzip der soziometrischen Befragung wurde bereits im [Eingangsbeispiel](#soziometrie-und-soziale-netzwerke-mit-r) dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler_innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem "Verhältnis" zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als *soziometrisches Kriterium* bezeichnet.
+
+>**Beispiele für soziometrische Kriterien:**  
+>**Schüler_innen-Ebene**
+
+```{r include = F}
+TAB <- data.frame(1:10)
+TAB$"Soziometrisches Kriterium" <- c(
+"Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?",
+"Mit wem aus deiner Klasse spielst du gerne?",
+"Mit wem aus deiner Klasse spielst du nicht so gerne?",
+"Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)?",
+"Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule?",
+"Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen?",
+"Wen aus deiner Klasse magst du gerne?",
+"Wen aus deiner Klasse magst du nicht so gerne?",
+"Neben wem aus deiner Klasse würdest du gerne sitzen?",
+"Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?")
+
+TAB$"Dimension/\ngemessenes Konstrukt" <- c(
+"Gemeinsame Aktivitäten\n(Spiel)",
+"Beliebtheit als\nSpielpartner_in",
+"Unbeliebtheit als\nSpielpartner_in",
+"Außerschulische\nLernaktivitäten",
+"Außerschulische Kontakte\n(allgemein)",
+"Außerschulische Kontakte\n(Spielen)",
+"Allgemeine\nBeliebtheit",
+"Allgemeine\nUnbeliebtheit",
+"Beliebtheit als\nSitzpartner_in",
+"Unbeliebtheit als\nSitzpartner_in")
+TAB$X1.10 <- NULL
+```
+
+```{r, echo = F, warning = F, message = F, ft.align = "left"}
+flextable(TAB) |> 
+  width(j = 1, 2.3, unit = "in") |> 
+  width(j = 2, 2.3, unit = "in") |>
+  align(j = 2, align = "right", part = "all") |>
+  bold(i = 1, bold = TRUE, part = "header")
+```
+
+>**Beispiele für soziometrische Kriterien:**  
+>**(Lehrkraft-Ebene)**
+
+```{r include = F}
+TAB <- data.frame(1:3)
+TAB$"Soziometrisches Kriterium" <- c(
+"Mit welchen Kolleg_innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?",
+"Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?",
+"Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?") 
+
+TAB$"Dimension/\ngemessenes Konstrukt" <- c(
+"Teamarbeit\n(Förderplanung)",
+"Teamarbeit\n(Teamteaching)",
+"Teamarbeit\n(kollegiale Fallberatung)")
+TAB$X1.3 <- NULL
+```
+
+```{r, echo = F, warning = F, message = F, ft.align = "left"}
+flextable(TAB) |> 
+  width(j = 1, 2.3, unit = "in") |> 
+  width(j = 2, 2.3, unit = "in") |>
+  align(j = 2, align = "right", part = "all") |>
+  bold(i = 1, bold = TRUE, part = "header")
+```
+
+Das soziometrische Kriterium sollte mit Bedacht formuliert werden:
+Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug)?
 
 Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.
 
-Das soziometrische Kriterium sollte mit Bedacht formuliert werden:
-Welche Dimension einer Sozialbeziehung soll fokussiert werden?
+## Ethik
 
+## Datenschutz
+
+## Geschichte der Soziometrie
 
 # Literatur
-
-<!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Literatur | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
-  <meta name="description" content="5 Literatur | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <title>2 Soziometrie und soziale Netzwerke mit R | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
+  <meta name="description" content="2 Soziometrie und soziale Netzwerke mit R | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Literatur | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta property="og:title" content="2 Soziometrie und soziale Netzwerke mit R | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Literatur | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta name="twitter:title" content="2 Soziometrie und soziale Netzwerke mit R | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="was-ist-soziometrie.html"/>
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="was-ist-r.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -188,41 +188,92 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="literatur" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Literatur</h1>
-
+<div id="soziometrie-und-soziale-netzwerke-mit-r" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Soziometrie und soziale Netzwerke mit R</h1>
+<p>In diesem Buch erlernen Sie die Analyse sozialer Netzwerkdaten mit dem Statistikprogramm R <span class="citation">(<a href="#ref-Rcore" role="doc-biblioref">R Core Team 2021</a>)</span>. Ich möchte Ihnen daher zu Beginn (ohne weitere Erläuterungen zu R) die Vorzüge der Programmiersprache R bei der Analyse sozialer Netzwerkdaten demonstrieren.</p>
+<blockquote>
+<p><strong>Fallbeispiel</strong></p>
+<p>Eine Grundschullehrkraft hat eine kleine Klasse der Jahrgangsstufe 1 übernommen (7 Kinder). Wenn die Schüler_innen der gesamten Schule in der großen Pause auf dem Schulhof zusammen spielen, dann ist es allerdings sehr unübersichtlich und die Lehrkraft kann nicht alle Aktivitäten der Kinder gleichermaßen im Auge behalten. Die Lehrkraft möchte daher einen genaueren Einblick in das “soziale Miteinander” ihrer neuen Klasse erhalten und startet deshalb eine <strong>soziometrische Befragung</strong> der einzelnen Schüler_innen: <em>Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</em></p>
+<p>Die Lehrkraft notiert die Antworten der Kinder in einer Tabelle.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Befragtes Kind</th>
+<th>Antworten</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Susi <em>…hat gespielt mit…</em></td>
+<td>Max, Ali, Til</td>
+</tr>
+<tr class="even">
+<td>Eda <em>…hat gespielt mit…</em></td>
+<td>Lena</td>
+</tr>
+<tr class="odd">
+<td>Ella <em>…hat gespielt mit…</em></td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Lena <em>…hat gespielt mit…</em></td>
+<td>Eda</td>
+</tr>
+<tr class="odd">
+<td>Max <em>…hat gespielt mit…</em></td>
+<td>Ali, Susi</td>
+</tr>
+<tr class="even">
+<td>Ali <em>…hat gespielt mit…</em></td>
+<td>Max, Susi</td>
+</tr>
+<tr class="odd">
+<td>Til <em>…hat gespielt mit…</em></td>
+<td>Susi</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Die Tabelle mit den Antworten bietet schon eine gewisse Übersichtlichkeit, da zum Beispiel ersichtlich wird, dass Ella bei der Befragung keine Mitschüler_innen benannt hat und auch von keinen Mitschüler_innen benannt wurde (Ella hat mit niemandem gespielt und niemand hat mit Ella gespielt). Die Lehrkraft möchte die soziometrischen Daten weiter verarbeiten und überträgt die Antworten der Kinder deshalb in das Statistikprogramm R. Zuvor wird mit den ersten beiden R-Befehlen (bzw. R-Funktionen) das R-Zusatzpaket <em>igraph</em> installiert und anschließend geladen. <em>igraph</em> <span class="citation">(<a href="#ref-igraph" role="doc-biblioref">Csardi and Nepusz 2006</a>)</span> ist ein spezifisches R-Zusatzpaket zur Verarbeitung und Analyse von Netzwerkdaten.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;igraph&quot;</span>) <span class="co"># R-Zusatzpaket igraph installieren</span></span>
+<span id="cb1-2"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) <span class="co"># R-Zusatzpaket igraph laden</span></span></code></pre></div>
+<p>Anschließend werden alle Antworten der Kinder in der Form <code>Susi -+ Max</code> (Susi <em>…hat gespielt mit…</em> Max) an die Funktion <code>graph_from_literal()</code> übergeben (eine Funktion des Zusatzpaketes <em>igraph</em>). Da Ella mit niemandem gespielt hat, erfolgt für Ella ausschließlich die Übergabe des Namen <code>Ella</code>. Alle Antworten der Kinder werden dann mit dem Zuweisungspfeil <code>&lt;-</code> als Objekt <code>netzwerk</code> gespeichert.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a>netzwerk <span class="ot">&lt;-</span></span>
+<span id="cb2-2"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">graph_from_literal</span>(Susi <span class="sc">-+</span> Max, Susi <span class="sc">-+</span> Ali, Susi <span class="sc">-+</span> Til,</span>
+<span id="cb2-3"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                     Eda <span class="sc">-+</span> Lena, Ella, Lena <span class="sc">-+</span> Eda,</span>
+<span id="cb2-4"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb2-4" aria-hidden="true" tabindex="-1"></a>                     Max <span class="sc">-+</span> Ali, Max <span class="sc">-+</span> Susi, Ali <span class="sc">-+</span> Max,</span>
+<span id="cb2-5"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb2-5" aria-hidden="true" tabindex="-1"></a>                     Ali <span class="sc">-+</span> Susi, Til <span class="sc">-+</span> Susi)</span></code></pre></div>
+<p>Mit der Funktion <code>print_all()</code> können wir jederzeit die Informationen im Objekt <code>netzwerk</code> abrufen (also die Antworten der Kinder). Hierfür übergeben wir das Objekt <code>netzwerk</code> an die entsprechende Funktion. Die Antworten der Kinder erscheinen in der Form <code>Susi-&gt;Max</code> (Susi <em>…hat gespielt mit…</em> Max).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print_all</span>(netzwerk)</span></code></pre></div>
+<pre><code>## IGRAPH 238c6c0 DN-- 7 10 -- 
+## + attr: name (v/c)
+## + edges from 238c6c0 (vertex names):
+##  [1] Susi-&gt;Max  Susi-&gt;Ali  Susi-&gt;Til  Max -&gt;Susi Max -&gt;Ali 
+##  [6] Ali -&gt;Susi Ali -&gt;Max  Til -&gt;Susi Eda -&gt;Lena Lena-&gt;Eda</code></pre>
+<p>Ein Bild sagt mehr als tausend Worte. Abschließend möchten wir daher die Antworten der Kinder visualisieren (Netzwerkvisualisierung). Wir übergeben daher das Objekt <code>netzwerk</code> an die Funktion <code>plot()</code> (<em>plotten</em>) und definieren noch ein paar Eigenschaften der Abbildung, z.B. die Größe der Kreissymbole mit dem Argument <code>vertex.size = 30</code>.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>))</span>
+<span id="cb5-2"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ränder (margins) der Grafik auf null setzten</span></span>
+<span id="cb5-3"><a href="soziometrie-und-soziale-netzwerke-mit-r.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(netzwerk, <span class="at">vertex.size =</span> <span class="dv">30</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong>Soziales Netzwerk:</strong> <em>Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</em></p>
+<p>Die Grafik ist eine Repräsentation der Antworten der Kinder (mit Pfeilen und Kreissymbolen). In der Grafik sehen wir auf den ersten Blick spannende soziale Netzwerkstrukturen: Eine Triade (Max, Ali, Susi), zwei Dyaden (Eda und Lena sowie Susi und Til) und das isolierte Kind ohne Spielpartner_innen (Ella).</p>
+</div>
+<h3> Literatur</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
-<div class="csl-entry">
+<div id="ref-igraph" class="csl-entry">
 Csardi, Gabor, and Tamas Nepusz. 2006. <span>“The Igraph Software Package for Complex Network Research.”</span> <em>InterJournal</em> Complex Systems: 1695. <a href="https://igraph.org">https://igraph.org</a>.
 </div>
-<div class="csl-entry">
+<div id="ref-Rcore" class="csl-entry">
 R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
-<div class="csl-entry">
-Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
-<div class="csl-entry">
-Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.
-</div>
-<div class="csl-entry">
-Wollschläger, Daniel. 2021. <em>R Kompakt: <span>Der</span> Schnelle <span>Einstieg</span> in Die <span>Datenanalyse</span></em>. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-662-63075-4">https://doi.org/10.1007/978-3-662-63075-4</a>.
-</div>
-</div>
-</div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="was-ist-soziometrie.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="was-ist-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

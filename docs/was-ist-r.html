@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"/>
+<link rel="prev" href="soziometrie-und-soziale-netzwerke-mit-r.html"/>
 <link rel="next" href="was-ist-soziometrie.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -52,6 +52,7 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/tabwid-1.0.0/tabwid.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -155,13 +156,20 @@ div.csl-indent {
 
 <ul class="summary">
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
-<li class="chapter" data-level="2" data-path="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Erstes Beispiel: Soziometrie und soziale Netzwerke mit R</a></li>
+<li class="chapter" data-level="2" data-path="soziometrie-und-soziale-netzwerke-mit-r.html"><a href="soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Soziometrie und soziale Netzwerke mit R</a></li>
 <li class="chapter" data-level="3" data-path="was-ist-r.html"><a href="was-ist-r.html"><i class="fa fa-check"></i><b>3</b> Was ist R?</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="was-ist-r.html"><a href="was-ist-r.html#statistische-datenanalyse"><i class="fa fa-check"></i><b>3.1</b> Statistische Datenanalyse</a></li>
 <li class="chapter" data-level="3.2" data-path="was-ist-r.html"><a href="was-ist-r.html#datenimport"><i class="fa fa-check"></i><b>3.2</b> Datenimport</a></li>
+<li class="chapter" data-level="3.3" data-path="was-ist-r.html"><a href="was-ist-r.html#datenvisualisierung"><i class="fa fa-check"></i><b>3.3</b> Datenvisualisierung</a></li>
+<li class="chapter" data-level="3.4" data-path="was-ist-r.html"><a href="was-ist-r.html#der-pipe-operator"><i class="fa fa-check"></i><b>3.4</b> Der Pipe-Operator |&gt;</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a></li>
+<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#ethik"><i class="fa fa-check"></i><b>4.1</b> Ethik</a></li>
+<li class="chapter" data-level="4.2" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#datenschutz"><i class="fa fa-check"></i><b>4.2</b> Datenschutz</a></li>
+<li class="chapter" data-level="4.3" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#geschichte-der-soziometrie"><i class="fa fa-check"></i><b>4.3</b> Geschichte der Soziometrie</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="literatur.html"><a href="literatur.html"><i class="fa fa-check"></i><b>5</b> Literatur</a></li>
 </ul>
 
@@ -182,7 +190,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="was-ist-r" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Was ist R?</h1>
-<p>R <span class="citation">(<a href="#ref-Rcore" role="doc-biblioref">R Core Team 2021</a>)</span> ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen <a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r">Beispiel</a> haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch <a href="http://dwoll.de/r/rKompakt.php">“R kompakt - Der schnelle Einstieg in die Datenanalyse”</a> <span class="citation">(<a href="#ref-wollschlager_r_2021" role="doc-biblioref">Wollschläger 2021</a>)</span>. Dort erfahren Sie alle Grundlagen zur Installation und Ausführung von R sowie zur Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R.</p>
+<p>R <span class="citation">(<a href="#ref-Rcore" role="doc-biblioref">R Core Team 2021</a>)</span> ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen <a href="#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r">Beispiel</a> haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch <a href="http://dwoll.de/r/rKompakt.php">“R kompakt - Der schnelle Einstieg in die Datenanalyse”</a> <span class="citation">(<a href="#ref-wollschlager_r_2021" role="doc-biblioref">Wollschläger 2021</a>)</span>. Dort erfahren Sie alle Grundlagen zur Installation und Ausführung von R sowie zur Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R.</p>
 <div id="statistische-datenanalyse" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Statistische Datenanalyse</h2>
 <p>Wenn wir die Sozialbeziehungen in sozialen Gruppen betrachten wollen, so erscheint eine statistische Beschreibung der sozialen Gruppen sinnvoll. Wir sind z.B. interessiert an den persönlichen Merkmalen und Eigenschaften der Schüler_innen in einer Klasse (z.B. Alter, Geschlecht, Verhaltensweisen, usw.). Informationen dieser Art werden in Datensätzen gespeichert.</p>
@@ -248,7 +256,7 @@ div.csl-indent {
 <span id="cb6-2"><a href="was-ist-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>alter <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>)</span>
 <span id="cb6-3"><a href="was-ist-r.html#cb6-3" aria-hidden="true" tabindex="-1"></a>geschlecht <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
 <span id="cb6-4"><a href="was-ist-r.html#cb6-4" aria-hidden="true" tabindex="-1"></a>IV <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
-<p>In R kann man sich stets alle Objekte anschauen, indem man sie einfach “aufruft.” Wir betrachten die Variable introvertiertes Verhalten (IV).</p>
+<p>In R kann man sich stets alle Objekte anschauen, indem man sie einfach “aufruft.” Wir betrachten die Variable introvertiertes Verhalten (<code>IV</code>).</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="was-ist-r.html#cb7-1" aria-hidden="true" tabindex="-1"></a>IV <span class="co"># Variable aufrufen und anzeigen</span></span></code></pre></div>
 <pre><code>## [1] 4 1 4 3 2 1 2</code></pre>
 <p>Die 4 Variablen werden nun in einem Datensatz zusammengefasst. Dabei werden die Variablen an die Funktion <code>data.frame()</code> übergeben. Wir erstellen mit der Funktion <code>data.frame()</code> ein neues Objekt (den Beispieldatensatz). Der Beispieldatensatz wird anschließend aufgerufen und angezeigt.</p>
@@ -262,8 +270,9 @@ div.csl-indent {
 ## 5  Max     5          1  2
 ## 6  Ali     6          1  1
 ## 7  Til     6          1  2</code></pre>
-<p>Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (IV) der Kinder. Mit <code>beispieldatensatz$IV</code> können wir die entsprechende Variable des Beispieldatensatzes aufrufen. Wir berechnen den Mittelwert mit der Funktion <code>mean()</code> und den getrimmten Mittelwert indem wir zusätzlich das Argument <code>trim = 0.2</code> festlegen. Die Variable <code>beispieldatensatz$IV</code> wird dabei an die Funktion <code>mean()</code> übergeben.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="was-ist-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a>beispieldatensatz<span class="sc">$</span>IV <span class="co"># Variable des Beispieldatensatzes aufrufen und anzeigen</span></span></code></pre></div>
+<p>Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (<code>IV</code>) der Kinder. Mit <code>beispieldatensatz$IV</code> können wir die entsprechende Variable des Beispieldatensatzes aufrufen. Wir berechnen den Mittelwert mit der Funktion <code>mean()</code> und den getrimmten Mittelwert indem wir zusätzlich das Argument <code>trim = 0.2</code> festlegen. Die Variable <code>beispieldatensatz$IV</code> wird dabei an die Funktion <code>mean()</code> übergeben.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="was-ist-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable des Beispieldatensatzes aufrufen und anzeigen</span></span>
+<span id="cb11-2"><a href="was-ist-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a>beispieldatensatz<span class="sc">$</span>IV</span></code></pre></div>
 <pre><code>## [1] 4 1 4 3 2 1 2</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="was-ist-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(beispieldatensatz<span class="sc">$</span>IV) <span class="co"># Mittelwert</span></span></code></pre></div>
 <pre><code>## [1] 2.428571</code></pre>
@@ -273,7 +282,7 @@ div.csl-indent {
 <div id="datenimport" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Datenimport</h2>
 <p>In den allermeisten Fällen sind die zu analysierenden Daten als Excel- oder CSV-Dateien auf der Festplatte oder in einer Cloud gespeichert. Für die Analysen mit R müssen diese Daten zunächst eingelesen werden (Datenimport).</p>
-<p>Hier finden Sie den bekannten Beispieldatensatz als CSV-Datei (<a href="https://figshare.com/ndownloader/files/31108225">Link zur CSV-Datei</a>) und als Excel-Datei (<a href="https://figshare.com/ndownloader/files/31108216">Link zur Excel-Datei</a>). Speichern Sie die beiden Dateien auf Ihrer Festplatte, z.B. auf dem Desktop.</p>
+<p>Hier finden Sie den bekannten Beispieldatensatz als CSV-Datei (<a href="https://figshare.com/ndownloader/files/31108225">Link zur CSV-Datei</a><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>) und als Excel-Datei (<a href="https://figshare.com/ndownloader/files/31108216">Link zur Excel-Datei</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>). Speichern Sie die beiden Dateien auf Ihrer Festplatte, z.B. auf dem Desktop.</p>
 <p>In R gibt es viele Wege um Daten einzulesen. Hier nur ein Beispiel für die CSV-Datei. Sie müssen den Dateipfad (Speicherort und Dateinamen mit Dateiendung) an die Funktion <code>read.csv2()</code> übergeben.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="was-ist-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a>daten <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;C:/Users/pawel/Desktop/daten.csv&quot;</span>)</span></code></pre></div>
 <p>Das Einlesen einer Excel-Datei gelingt mit der Funktion <code>read_excel()</code>. Zuvor muss allerdings das entsprechende R-Zusatzpaket <em>readxl</em> <span class="citation">(<a href="#ref-readxl" role="doc-biblioref">Wickham and Bryan 2019</a>)</span> installiert und geladen werden.</p>
@@ -283,7 +292,8 @@ div.csl-indent {
 <p>Wir können auch auf die Angabe des Dateipfades verzichten und stattdessen mit der Funktion <code>file.choose()</code> das Dateiverzeichnis nach der entsprechenden CSV- oder Excel-Datei durchsuchen.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="was-ist-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a>daten <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">file.choose</span>())</span></code></pre></div>
 <p>Die Daten können aber auch direkt aus dem Internet eingelesen werden. Hierfür benötigen wir lediglich den Link zur Datei (dies kann auch ein geteilter Link zu einer Datei in einer Cloud sein).</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="was-ist-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>daten <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;https://figshare.com/ndownloader/files/31108225&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="was-ist-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>daten <span class="ot">&lt;-</span></span>
+<span id="cb20-2"><a href="was-ist-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv2</span>(<span class="st">&quot;https://figshare.com/ndownloader/files/31108225&quot;</span>)</span></code></pre></div>
 <p>In allen Fällen war das einlesen des Beispieldatensatzes erfolgreich und wir können den Datensatz aufrufen.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="was-ist-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a>daten</span></code></pre></div>
 <pre><code>##   name alter geschlecht IV
@@ -295,11 +305,42 @@ div.csl-indent {
 ## 6  Ali     6          1  1
 ## 7  Til     6          1  2</code></pre>
 </div>
+<div id="datenvisualisierung" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Datenvisualisierung</h2>
+<p>R eignet sich vorzüglich zur Visualisierung von Daten. Wir erstellen ein Histogramm der Variable <code>IV</code>.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="was-ist-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(daten<span class="sc">$</span>IV)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Mittlerweile sind die Grafikbefehle des Zusatzpaketes <em>ggplot2</em> <span class="citation">(<a href="#ref-ggplot" role="doc-biblioref">Wickham 2016</a>)</span> der Standard bei der Erstellung von Grafiken in R.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="was-ist-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb24-2"><a href="was-ist-r.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>Wir erstellen ein Histogramm mit den Grafikbefehlen des Zusatzpaketes <em>ggplot2</em>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="was-ist-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> daten, <span class="at">mapping =</span> <span class="fu">aes</span>(IV)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
-<h3>References</h3>
+<div id="der-pipe-operator" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Der Pipe-Operator |&gt;</h2>
+<p>R-Funktionen können ineinander geschachtelt werden. Dies ist z.B. notwendig bei der Visualisierung einer Häufigkeitstabelle. Zunächst erstellen wir die benötigte Häufigkeitstabelle der Variable <code>alter</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="was-ist-r.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten<span class="sc">$</span>alter)</span></code></pre></div>
+<pre><code>## 
+## 5 6 7 
+## 1 5 1</code></pre>
+<p>Zur Visualisierung der Häufigkeitstabelle wird <code>table(daten$alter)</code> an den Befehl <code>pie()</code> (Kreisdiagramm/Tortendiagramm) übergeben.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="was-ist-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(daten<span class="sc">$</span>alter), <span class="at">main =</span> <span class="st">&quot;Alter in Jahren&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Diese Schachtelung von Befehlen (<code>table()</code> innerhalb von <code>pie()</code>) ist unübersichtlich. Eine objektorientierte Programmierung ist übersichtlicher (auch dies führt zur erfolgreichen Visualiserung).</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="was-ist-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a>table_alter <span class="ot">&lt;-</span> <span class="fu">table</span>(daten<span class="sc">$</span>alter)</span>
+<span id="cb29-2"><a href="was-ist-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(table_alter, <span class="at">main =</span> <span class="st">&quot;Alter in Jahren&quot;</span>)</span></code></pre></div>
+<p>Noch übersichtlicher ist die “Weitergabe” der Häufigkeitstabelle an den Grafik-Befehl mittels Pipe-Operator <code>|&gt;</code> (auch dies führt zur erfolgreichen Visualiserung). Der Pipe-Operator ist ein sehr nützliches Werkzeug.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="was-ist-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(daten<span class="sc">$</span>alter) <span class="sc">|&gt;</span> <span class="fu">pie</span>(<span class="at">main =</span> <span class="st">&quot;Alter in Jahren&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<h3> Literatur</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Rcore" class="csl-entry">
 R Core Team. 2021. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-ggplot" class="csl-entry">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
 </div>
 <div id="ref-readxl" class="csl-entry">
 Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.
@@ -308,12 +349,19 @@ Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a
 Wollschläger, Daniel. 2021. <em>R Kompakt: <span>Der</span> Schnelle <span>Einstieg</span> in Die <span>Datenanalyse</span></em>. Berlin, Heidelberg: Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-662-63075-4">https://doi.org/10.1007/978-3-662-63075-4</a>.
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://figshare.com/ndownloader/files/31108225" class="uri">https://figshare.com/ndownloader/files/31108225</a><a href="was-ist-r.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://figshare.com/ndownloader/files/31108216" class="uri">https://figshare.com/ndownloader/files/31108216</a><a href="was-ist-r.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="soziometrie-und-soziale-netzwerke-mit-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="was-ist-soziometrie.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
