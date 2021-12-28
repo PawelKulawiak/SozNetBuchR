@@ -9,6 +9,7 @@ documentclass: book
 site: bookdown::bookdown_site
 bibliography: references.bib
 link-citations: true
+geometry: "a4paper, left=3cm, right=3cm, top=4cm, bottom=4cm"
 ---
 
 ```{r setup, include=FALSE}
@@ -16,9 +17,11 @@ library(igraph)
 library(readxl)
 library(ggplot2)
 library(flextable)
-options(width = 60)
+options(width = 80)
 ```
+
 \let\cleardoublepage\clearpage
+
 # Vorwort
 ![](images\cover.png)
 \newpage
@@ -51,15 +54,15 @@ In diesem Buch erlernen Sie die Analyse sozialer Netzwerkdaten mit dem Statistik
 >
 >Die Lehrkraft notiert die Antworten der Kinder in einer Tabelle.
 >
->Befragtes Kind | Antworten
->---------------|----------
->Susi *...hat gespielt mit...* | Max, Ali, Til
->Eda *...hat gespielt mit...* | Lena
->Ella *...hat gespielt mit...* | -
->Lena *...hat gespielt mit...* | Eda
->Max *...hat gespielt mit...* | Ali, Susi
->Ali *...hat gespielt mit...* | Max, Susi
->Til *...hat gespielt mit...* | Susi
+>Befragtes Kind | | Antworten
+>---------------|-|----------
+>Susi | *...hat gespielt mit...* | Max, Ali, Til
+>Eda | *...hat gespielt mit...* | Lena
+>Ella | *...hat gespielt mit...* | -
+>Lena | *...hat gespielt mit...* | Eda
+>Max | *...hat gespielt mit...* | Ali, Susi
+>Ali | *...hat gespielt mit...* | Max, Susi
+>Til | *...hat gespielt mit...* | Susi
 
 Die Tabelle mit den Antworten bietet schon eine gewisse Übersichtlichkeit, da zum Beispiel ersichtlich wird, dass Ella bei der Befragung keine Mitschüler_innen benannt hat und auch von keinen Mitschüler_innen benannt wurde (Ella hat mit niemandem gespielt und niemand hat mit Ella gespielt). Die Lehrkraft möchte die soziometrischen Daten weiter verarbeiten und überträgt die Antworten der Kinder deshalb in das Statistikprogramm R. Zuvor wird mit den ersten beiden R-Befehlen (bzw. R-Funktionen) das R-Zusatzpaket *igraph* installiert und anschließend geladen. *igraph* [@igraph] ist ein spezifisches R-Zusatzpaket zur Verarbeitung und Analyse von Netzwerkdaten.
 
@@ -71,11 +74,9 @@ library(igraph) # R-Zusatzpaket igraph laden
 Anschließend werden alle Antworten der Kinder in der Form `Susi -+ Max` (Susi *...hat gespielt mit...* Max) an die Funktion `graph_from_literal()` übergeben (eine Funktion des Zusatzpaketes *igraph*). Da Ella mit niemandem gespielt hat, erfolgt für Ella ausschließlich die Übergabe des Namen `Ella`. Alle Antworten der Kinder werden dann mit dem Zuweisungspfeil `<-` als Objekt `netzwerk` gespeichert.
 
 ```{r}
-netzwerk <-
-  graph_from_literal(Susi -+ Max, Susi -+ Ali, Susi -+ Til,
-                     Eda -+ Lena, Ella, Lena -+ Eda,
-                     Max -+ Ali, Max -+ Susi, Ali -+ Max,
-                     Ali -+ Susi, Til -+ Susi)
+netzwerk <- graph_from_literal(Susi -+ Max, Susi -+ Ali, Susi -+ Til, Eda -+ Lena,
+                               Ella, Lena -+ Eda, Max -+ Ali, Max -+ Susi,
+                               Ali -+ Max, Ali -+ Susi, Til -+ Susi)
 ```
 
 Mit der Funktion `print_all()` können wir jederzeit die Informationen im Objekt `netzwerk` abrufen (also die Antworten der Kinder). Hierfür übergeben wir das Objekt `netzwerk` an die entsprechende Funktion. Die Antworten der Kinder erscheinen in der Form `Susi->Max` (Susi *...hat gespielt mit...* Max).
@@ -87,8 +88,7 @@ print_all(netzwerk)
 Ein Bild sagt mehr als tausend Worte. Abschließend möchten wir daher die Antworten der Kinder visualisieren (Netzwerkvisualisierung). Wir übergeben daher das Objekt `netzwerk` an die Funktion `plot()` (*plotten*) und definieren noch ein paar Eigenschaften der Abbildung, z.B. die Größe der Kreissymbole mit dem Argument `vertex.size = 30`.
 
 ```{r}
-par(mar = c(0, 0, 0, 0))
-# Ränder (margins) der Grafik auf null setzten
+par(mar = c(0, 0, 0, 0)) # Ränder (margins) der Grafik auf null setzten
 plot(netzwerk, vertex.size = 30)
 ```
 
@@ -114,7 +114,7 @@ Wenn wir die Sozialbeziehungen in sozialen Gruppen betrachten wollen, so erschei
 >Ali | 6 | 1 | 1
 >Til | 6 | 1 | 2
 
-In R erstellen wir die 4 Variablen als Objekte mit dem Zuweisungspfeil `<-`. Die Werte der jeweiligen Variablen werden dabei mit der Funktion `c()` zusammengefasst (**c**ombine values into a vector).
+In R erstellen wir die 4 Variablen (`name, alter, geschlecht, IV`) als Objekte mit dem Zuweisungspfeil `<-`. Die Werte der jeweiligen Variablen werden dabei mit der Funktion `c()` zusammengefasst (**c**ombine values into a vector).
 
 ```{r}
 name <- c("Susi", "Eda", "Ella", "Lena", "Max", "Ali", "Til")
@@ -139,8 +139,7 @@ beispieldatensatz # Beispieldatensatz aufrufen und anzeigen
 Nun möchten wir die Daten analysieren. Wir betrachten das introvertierte Verhalten (`IV`) der Kinder. Mit `beispieldatensatz$IV` können wir die entsprechende Variable des Beispieldatensatzes aufrufen. Wir berechnen den Mittelwert mit der Funktion `mean()` und den getrimmten Mittelwert indem wir zusätzlich das Argument `trim = 0.2` festlegen. Die Variable `beispieldatensatz$IV` wird dabei an die Funktion `mean()` übergeben.
 
 ```{r}
-# Variable des Beispieldatensatzes aufrufen und anzeigen
-beispieldatensatz$IV
+beispieldatensatz$IV # Variable des Beispieldatensatzes aufrufen und anzeigen
 mean(beispieldatensatz$IV) # Mittelwert
 mean(beispieldatensatz$IV, trim = 0.2) # Getrimmter Mittelwert
 ```
@@ -156,11 +155,11 @@ In R gibt es viele Wege um Daten einzulesen. Hier nur ein Beispiel für die CSV-
 daten <- read.csv2("C:/Users/pawel/Desktop/daten.csv")
 ```
 
-Das Einlesen einer Excel-Datei gelingt mit der Funktion `read_excel()`. Zuvor muss allerdings das entsprechende R-Zusatzpaket *readxl* [@readxl] installiert und geladen werden.
+Das Einlesen einer Excel-Datei gelingt mit der Funktion `read_excel()`. Zuvor muss allerdings das entsprechende R-Zusatzpaket *readxl* (Excel) [@readxl] installiert und geladen werden.
 
 ```{r eval = F}
-install.packages("readxl")
-library(readxl)
+install.packages("readxl") # R-Zusatzpaket readxl (Excel) installieren
+library(readxl) # R-Zusatzpaket readxl (Excel) laden
 daten <- read_excel("C:/Users/pawel/Desktop/daten.xlsx")
 ```
 
@@ -173,8 +172,7 @@ daten <- read_excel(file.choose())
 Die Daten können aber auch direkt aus dem Internet eingelesen werden. Hierfür benötigen wir lediglich den Link zur Datei (dies kann auch ein geteilter Link zu einer Datei in einer Cloud sein).
 
 ```{r}
-daten <-
-  read.csv2("https://figshare.com/ndownloader/files/31108225")
+daten <- read.csv2("https://figshare.com/ndownloader/files/31108225")
 ```
 
 In allen Fällen war das einlesen des Beispieldatensatzes erfolgreich und wir können den Datensatz aufrufen.
@@ -238,7 +236,7 @@ Das Prinzip der soziometrischen Befragung wurde bereits im [Eingangsbeispiel](#s
 >**Schüler_innen-Ebene**
 
 ```{r include = F}
-TAB <- data.frame(1:10)
+TAB <- data.frame(1:12)
 TAB$"Soziometrisches Kriterium" <- c(
 "Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?",
 "Mit wem aus deiner Klasse spielst du gerne?",
@@ -249,26 +247,30 @@ TAB$"Soziometrisches Kriterium" <- c(
 "Wen aus deiner Klasse magst du gerne?",
 "Wen aus deiner Klasse magst du nicht so gerne?",
 "Neben wem aus deiner Klasse würdest du gerne sitzen?",
-"Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?")
+"Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?",
+"Gibt es Mitschüler_innen, die deine Sachen mit Absicht kaputtmachen?",
+"Gibt es Mitschüler_innen, die dich mit Absicht schlagen, schubsen, treten, usw.?")
 
 TAB$"Dimension/\ngemessenes Konstrukt" <- c(
-"Gemeinsame Aktivitäten\n(Spiel)",
-"Beliebtheit als\nSpielpartner_in",
-"Unbeliebtheit als\nSpielpartner_in",
-"Außerschulische\nLernaktivitäten",
-"Außerschulische Kontakte\n(allgemein)",
-"Außerschulische Kontakte\n(Spielen)",
-"Allgemeine\nBeliebtheit",
-"Allgemeine\nUnbeliebtheit",
-"Beliebtheit als\nSitzpartner_in",
-"Unbeliebtheit als\nSitzpartner_in")
-TAB$X1.10 <- NULL
+"Gemeinsame Aktivitäten (Spiel)",
+"Beliebtheit als Spielpartner_in",
+"Unbeliebtheit als Spielpartner_in",
+"Außerschulische Lernaktivitäten",
+"Außerschulische Kontakte (allgemein)",
+"Außerschulische Kontakte (Spielen)",
+"Allgemeine Beliebtheit",
+"Allgemeine Unbeliebtheit",
+"Beliebtheit als Sitzpartner_in",
+"Unbeliebtheit als Sitzpartner_in",
+"Abweichendes Verhalten\n(Sachbeschädigung)",
+"Abweichendes Verhalten\n(physische Gewalt)")
+TAB$X1.12 <- NULL
 ```
 
-```{r, echo = F, warning = F, message = F, ft.align = "left"}
+```{r, echo = F, warning = F, message = F, ft.align = "center"}
 flextable(TAB) |> 
-  width(j = 1, 2.3, unit = "in") |> 
-  width(j = 2, 2.3, unit = "in") |>
+  width(j = 1, 3, unit = "in") |> 
+  width(j = 2, 2.7, unit = "in") |>
   align(j = 2, align = "right", part = "all") |>
   bold(i = 1, bold = TRUE, part = "header")
 ```
@@ -284,22 +286,21 @@ TAB$"Soziometrisches Kriterium" <- c(
 "Mit welchen Kolleg_innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?") 
 
 TAB$"Dimension/\ngemessenes Konstrukt" <- c(
-"Teamarbeit\n(Förderplanung)",
-"Teamarbeit\n(Teamteaching)",
-"Teamarbeit\n(kollegiale Fallberatung)")
+"Teamarbeit (Förderplanung)",
+"Teamarbeit (Teamteaching)",
+"Teamarbeit (kollegiale Fallberatung)")
 TAB$X1.3 <- NULL
 ```
 
-```{r, echo = F, warning = F, message = F, ft.align = "left"}
+```{r, echo = F, warning = F, message = F, ft.align = "center"}
 flextable(TAB) |> 
-  width(j = 1, 2.3, unit = "in") |> 
-  width(j = 2, 2.3, unit = "in") |>
+  width(j = 1, 3, unit = "in") |> 
+  width(j = 2, 2.7, unit = "in") |>
   align(j = 2, align = "right", part = "all") |>
   bold(i = 1, bold = TRUE, part = "header")
 ```
 
-Das soziometrische Kriterium sollte mit Bedacht formuliert werden:
-Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug)?
+Das soziometrische Kriterium sollte mit Bedacht formuliert werden: Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug, usw.)? Es ist wichtig zu realisieren, dass unterschiedliche Formulierungen eines soziometrischen Kriteriums auch unterschiedliche Dimensionen einer Sozialbeziehung abbilden können [siehe Mantel]. 
 
 Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.
 
