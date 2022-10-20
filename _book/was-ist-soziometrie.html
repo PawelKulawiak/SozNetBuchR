@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="de" xml:lang="de">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</title>
+  <meta name="description" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Was ist Soziometrie? | Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte" />
+  
+  
+  
+
+<meta name="author" content="Pawel R. Kulawiak" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="was-ist-r.html"/>
+<link rel="next" href="literatur.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/tabwid-1.1.0/tabwid.css" rel="stylesheet" />
+<link href="libs/tabwid-1.1.0/scrool.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Vorwort</a></li>
+<li class="chapter" data-level="2" data-path="soziometrie-und-soziale-netzwerke-mit-r.html"><a href="soziometrie-und-soziale-netzwerke-mit-r.html"><i class="fa fa-check"></i><b>2</b> Soziometrie und soziale Netzwerke mit R</a></li>
+<li class="chapter" data-level="3" data-path="was-ist-r.html"><a href="was-ist-r.html"><i class="fa fa-check"></i><b>3</b> Was ist R?</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="was-ist-r.html"><a href="was-ist-r.html#statistische-datenanalyse"><i class="fa fa-check"></i><b>3.1</b> Statistische Datenanalyse</a></li>
+<li class="chapter" data-level="3.2" data-path="was-ist-r.html"><a href="was-ist-r.html#datenimport"><i class="fa fa-check"></i><b>3.2</b> Datenimport</a></li>
+<li class="chapter" data-level="3.3" data-path="was-ist-r.html"><a href="was-ist-r.html#datenvisualisierung"><i class="fa fa-check"></i><b>3.3</b> Datenvisualisierung</a></li>
+<li class="chapter" data-level="3.4" data-path="was-ist-r.html"><a href="was-ist-r.html#der-pipe-operator-bzw."><i class="fa fa-check"></i><b>3.4</b> Der Pipe-Operator |&gt; bzw. %&gt;%</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html"><i class="fa fa-check"></i><b>4</b> Was ist Soziometrie?</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#ethik"><i class="fa fa-check"></i><b>4.1</b> Ethik</a></li>
+<li class="chapter" data-level="4.2" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#datenschutz"><i class="fa fa-check"></i><b>4.2</b> Datenschutz</a></li>
+<li class="chapter" data-level="4.3" data-path="was-ist-soziometrie.html"><a href="was-ist-soziometrie.html#geschichte-der-soziometrie"><i class="fa fa-check"></i><b>4.3</b> Geschichte der Soziometrie</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="literatur.html"><a href="literatur.html"><i class="fa fa-check"></i><b>5</b> Literatur</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Soziometrie und soziale Netzwerkanalyse für Lehrkräfte und pädagogische Fachkräfte</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="was-ist-soziometrie" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Was ist Soziometrie?<a href="was-ist-soziometrie.html#was-ist-soziometrie" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Das Prinzip der soziometrischen Befragung wurde bereits im <a href="soziometrie-und-soziale-netzwerke-mit-r.html#soziometrie-und-soziale-netzwerke-mit-r">Eingangsbeispiel</a> dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler*innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem “Verhältnis” zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als <em>soziometrisches Kriterium</em> bezeichnet.</p>
+<template id="66ccfa5f-d9bc-43a6-8e84-7bf4331b93de"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  border-color: transparent;
+  caption-side: top;
+}
+.tabwid-caption-bottom table{
+  caption-side: bottom;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+.katex-display {
+    margin: 0 0 !important;
+}
+</style><div class="tabwid"><style>.cl-1830e39a{}.cl-18256772{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1825677c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1829cec0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1829ceca{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1829eca2{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1829ecac{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1829ecad{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1829ecb6{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1829ecb7{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1829ecb8{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-181eb1ac{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}</style><table class='cl-1830e39a'>
+
+<caption>
+<span id="tab:unnamed-chunk-23">Table 4.1: </span><span class="cl-181eb1ac">Beispiele für soziometrische Kriterien: (Schüler*innen-Ebene)</span>
+</caption>
+
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-1829eca2"><p class="cl-1829cec0"><span class="cl-18256772">Soziometrisches Kriterium</span></p></td><td class="cl-1829ecac"><p class="cl-1829ceca"><span class="cl-18256772">Dimension/</span><br><span class="cl-18256772">gemessenes Konstrukt</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Gemeinsame Aktivitäten (Spiel)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse spielst du gerne?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Beliebtheit als Spielpartner*in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse spielst du nicht so gerne?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Unbeliebtheit als Spielpartner*in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse hast du in der letzten Woche gemeinsam gelernt (außerhalb der Schule)?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Außerschulische Lernaktivitäten</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Außerschulische Kontakte (allgemein)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Mit wem aus deiner Klasse triffst du dich auch außerhalb der Schule zum Spielen?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Außerschulische Kontakte (Spielen)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Wen aus deiner Klasse magst du gerne?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Allgemeine Beliebtheit</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Wen aus deiner Klasse magst du nicht so gerne?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Allgemeine Unbeliebtheit</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Neben wem aus deiner Klasse würdest du gerne sitzen?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Beliebtheit als Sitzpartner*in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Neben wem aus deiner Klasse würdest du nicht so gerne sitzen?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Unbeliebtheit als Sitzpartner*in</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecad"><p class="cl-1829cec0"><span class="cl-1825677c">Gibt es Mitschüler*innen, die deine Sachen mit Absicht kaputtmachen?</span></p></td><td class="cl-1829ecb6"><p class="cl-1829ceca"><span class="cl-1825677c">Abweichendes Verhalten</span><br><span class="cl-1825677c">(Sachbeschädigung)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1829ecb7"><p class="cl-1829cec0"><span class="cl-1825677c">Gibt es Mitschüler*innen, die dich mit Absicht schlagen, schubsen, treten, usw.?</span></p></td><td class="cl-1829ecb8"><p class="cl-1829ceca"><span class="cl-1825677c">Abweichendes Verhalten</span><br><span class="cl-1825677c">(physische Gewalt)</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="77bf3da2-54b4-4800-beb9-e635d6644604"></div>
+<script>
+var dest = document.getElementById("77bf3da2-54b4-4800-beb9-e635d6644604");
+var template = document.getElementById("66ccfa5f-d9bc-43a6-8e84-7bf4331b93de");
+var caption = template.content.querySelector("caption");
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<template id="b707b6c6-b178-41d4-b890-f36e6b8cfc95"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  border-color: transparent;
+  caption-side: top;
+}
+.tabwid-caption-bottom table{
+  caption-side: bottom;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+.katex-display {
+    margin: 0 0 !important;
+}
+</style><div class="tabwid"><style>.cl-184b851a{}.cl-184044a2{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-184044ac{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1844a92a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1844a934{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1844c2d4{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1844c2de{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1844c2df{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1844c2e8{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1844c2e9{width:3in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1844c2ea{width:2.7in;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-183b0b22{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}</style><table class='cl-184b851a'>
+
+<caption>
+<span id="tab:unnamed-chunk-24">Table 4.2: </span><span class="cl-183b0b22">Beispiele für soziometrische Kriterien: (Lehrkraft-Ebene)</span>
+</caption>
+
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-1844c2d4"><p class="cl-1844a92a"><span class="cl-184044a2">Soziometrisches Kriterium</span></p></td><td class="cl-1844c2de"><p class="cl-1844a934"><span class="cl-184044a2">Dimension/</span><br><span class="cl-184044a2">gemessenes Konstrukt</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-1844c2df"><p class="cl-1844a92a"><span class="cl-184044ac">Mit welchen Kolleg*innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?</span></p></td><td class="cl-1844c2e8"><p class="cl-1844a934"><span class="cl-184044ac">Teamarbeit (Förderplanung)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1844c2df"><p class="cl-1844a92a"><span class="cl-184044ac">Mit welchen Kolleg*innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?</span></p></td><td class="cl-1844c2e8"><p class="cl-1844a934"><span class="cl-184044ac">Teamarbeit (Teamteaching)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1844c2e9"><p class="cl-1844a92a"><span class="cl-184044ac">Mit welchen Kolleg*innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?</span></p></td><td class="cl-1844c2ea"><p class="cl-1844a934"><span class="cl-184044ac">Teamarbeit (kollegiale Fallberatung)</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="d96d34f6-e1a9-4154-b2cc-0b854214ab95"></div>
+<script>
+var dest = document.getElementById("d96d34f6-e1a9-4154-b2cc-0b854214ab95");
+var template = document.getElementById("b707b6c6-b178-41d4-b890-f36e6b8cfc95");
+var caption = template.content.querySelector("caption");
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+<p>Das soziometrische Kriterium sollte mit Bedacht formuliert werden: Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, in der Zukunft, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug, usw.)?</p>
+<p>Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.</p>
+<div id="ethik" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Ethik<a href="was-ist-soziometrie.html#ethik" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="datenschutz" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Datenschutz<a href="was-ist-soziometrie.html#datenschutz" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="geschichte-der-soziometrie" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Geschichte der Soziometrie<a href="was-ist-soziometrie.html#geschichte-der-soziometrie" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="was-ist-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literatur.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
