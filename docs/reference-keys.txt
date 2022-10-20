@@ -14,7 +14,6 @@ datenimport
 datenvisualisierung
 der-pipe-operator-bzw.
 was-ist-soziometrie
-ethik
-datenschutz
+soziometrische-befragung
 geschichte-der-soziometrie
 literatur

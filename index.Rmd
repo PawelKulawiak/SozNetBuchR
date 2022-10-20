@@ -60,6 +60,7 @@ In diesem Buch erlernen Sie die Analyse sozialer Netzwerkdaten mit dem Statistik
 >
 > Eine Grundschullehrkraft hat eine kleine Klasse der Jahrgangsstufe 1 übernommen (7 Kinder). Wenn die Schüler\*innen der gesamten Schule in der großen Pause auf dem Schulhof zusammen spielen, dann ist es allerdings sehr unübersichtlich und die Lehrkraft kann nicht alle Aktivitäten der Kinder gleichermaßen im Auge behalten. Die Lehrkraft möchte daher einen genaueren Einblick in das "soziale Miteinander" ihrer neuen Klasse erhalten und startet deshalb eine **soziometrische Befragung** der einzelnen Schüler\*innen: *Mit wem aus deiner Klasse hast du in der letzten großen Pause gespielt?* Die Lehrkraft notiert die Antworten der Kinder in einer Tabelle.
 
+\ 
 ```{r, echo=F}
 VAR1 <- c("Susi", "Eda", "Ella", "Lena", "Max", "Ali", "Til")
 VAR2 <- rep("...hat gespielt mit...", 7)
@@ -71,6 +72,7 @@ data.frame(VAR1, VAR2, VAR3) |> flextable() |> autofit() |>
   set_header_labels(VAR3 = "Antworten") |>
   set_caption("Antworten einer soziometrischen Befragung")
 ```
+\ 
 
 Die Tabelle mit den Antworten bietet schon eine gewisse Übersichtlichkeit, da zum Beispiel ersichtlich wird, dass Ella bei der Befragung keine Mitschüler\*innen benannt hat und auch von keinen Mitschüler\*innen benannt wurde (Ella hat mit niemandem gespielt und niemand hat mit Ella gespielt). Die Lehrkraft möchte die soziometrischen Daten weiter verarbeiten und überträgt die Antworten der Kinder deshalb in das Statistikprogramm R. Zuvor wird mit den ersten beiden R-Befehlen (bzw. R-Funktionen) das R-Zusatzpaket *igraph* installiert und anschließend geladen. *igraph* [@igraph] ist ein spezifisches R-Zusatzpaket zur Verarbeitung und Analyse von Netzwerkdaten.
 
@@ -104,12 +106,13 @@ Die Grafik ist eine Repräsentation der Antworten der Kinder (mit Pfeilen und Kr
 
 # Was ist R?
 
-R [@Rcore] ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen [Beispiel](#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r) haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch ["R kompakt - Der schnelle Einstieg in die Datenanalyse"](http://dwoll.de/r/rKompakt.php) [@wollschlager_r_2021]. Dort erfahren Sie alle Grundlagen zur Installation und Ausführung von R sowie zur Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R.
+R [@Rcore] ist eine herausragende, freie und zukunftsweisende Programmiersprache zur Datenverarbeitung und Datenanalyse. Mit dem vorangegangenen [Beispiel](#erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r) haben wir einen ersten Einblick in die Verarbeitung, Analyse und Visualisierung von sozialen Netzwerkdaten mit R erhalten. An dieser Stelle kann aber keine umfassende Einführung in das Statistikprogramm R erfolgen. Hierfür konsultieren Sie bitte das hervorragende Buch ["R kompakt - Der schnelle Einstieg in die Datenanalyse"](http://dwoll.de/r/rKompakt.php) [@wollschlager_r_2021]. Dort erfahren Sie alle Grundlagen zur Installation und Ausführung von R sowie zur Datenverarbeitung, Datenanalyse und Datenvisualisierung mit R. In diesem Kapitel erfolgt dennoch ein kurze sowie exemplarische Einführung in die wichtigsten Grundlagen von R. Für die praktische Arbeit mit R wird die Arbeitsumgebung *RStudio* [@RSTUDIO] empfohlen.
 
 ## Statistische Datenanalyse
 
 Wenn wir die Sozialbeziehungen in sozialen Gruppen betrachten wollen, so erscheint eine statistische Beschreibung der sozialen Gruppe sinnvoll. Wir sind z.B. interessiert an den persönlichen Merkmalen und Eigenschaften der Schüler\*innen in einer Klasse (z.B. Alter, Geschlecht, Verhaltensweisen, usw.). Informationen dieser Art werden in Datensätzen gespeichert.
 
+\ 
 ```{r, echo = F}
 Name <- c("Susi", "Eda", "Ella", "Lena", "Max", "Ali", "Til")
 Alter <- c(6, 6, 7, 6, 5, 6, 6)
@@ -120,6 +123,7 @@ data.frame(Name, Alter, Geschlecht, IV) |> flextable() |> autofit() |>
   set_header_labels(IV = "Introvertiertes Verhalten (IV)") |>
   width(j = 4, 2) |> set_caption("Beispieldatensatz")
 ```
+\ 
 
 Mit R erstellen wir die 4 Variablen (`name, alter, geschlecht, IV`) als Objekte mit dem Zuweisungspfeil `<-`. Die Werte der jeweiligen Variablen werden dabei mit der Funktion `c()` zusammengefasst (**c**ombine values into a vector).
 
@@ -243,8 +247,11 @@ table(daten$alter) |> pie(main = "Alter in Jahren")
 
 # Was ist Soziometrie?
 
-Das Prinzip der soziometrischen Befragung wurde bereits im [Eingangsbeispiel](#soziometrie-und-soziale-netzwerke-mit-r) dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler\*innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem "Verhältnis" zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als *soziometrisches Kriterium* bezeichnet.
+## Soziometrische Befragung
 
+Das Prinzip der soziometrischen Befragung [für eine Übersicht siehe @Dollase2013] wurde bereits im [Eingangsbeispiel](#soziometrie-und-soziale-netzwerke-mit-r) dargestellt. Die Mitglieder einer sozialen Gruppe (z.B. Schüler\*innen in einer Klassengemeinschaft oder Lehrkräfte in einem Kollegium) werden anhand einer bestimmten Frage nach ihrem "Verhältnis" zu den anderen Gruppenmitgliedern befragt. Die gestellte Frage wird auch als *soziometrisches Kriterium* bezeichnet. Soziometrische Befragungen können schriftlich bzw. digital (Fragebogen) oder mündlich (Interview) erfolgen [für weitere Befragungsmodalitäten siehe @BUKOWSKI].
+
+\ 
 ```{r, echo = F, warning = F, message = F, ft.align = "center"}
 TAB <- data.frame(1:12)
 TAB$"Soziometrisches Kriterium" <- c(
@@ -283,19 +290,25 @@ flextable(TAB) |>
   bold(i = 1, bold = TRUE, part = "header") |>
   set_caption("Beispiele für soziometrische Kriterien: (Schüler*innen-Ebene)")
 ```
+\ 
 
+\ 
 ```{r, echo = F, warning = F, message = F, ft.align = "center"}
-TAB <- data.frame(1:3)
+TAB <- data.frame(1:5)
 TAB$"Soziometrisches Kriterium" <- c(
 "Mit welchen Kolleg*innen haben Sie im aktuellen Schuljahr Förderplangespräche geführt?",
 "Mit welchen Kolleg*innen haben Sie in den letzten vier Wochen gemeinsam unterrichtet (Teamteaching)?",
-"Mit welchen Kolleg*innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?") 
+"Mit welchen Kolleg*innen haben Sie in den letzten vier Wochen kollegiale Fallberatungen durchgeführt?",
+"Mit welchen Kolleg*innen kooperieren Sie besonders gerne?",
+"Mit welchen Kolleg*innen kooperieren Sie nicht so gerne?") 
 
 TAB$"Dimension/\ngemessenes Konstrukt" <- c(
 "Teamarbeit (Förderplanung)",
 "Teamarbeit (Teamteaching)",
-"Teamarbeit (kollegiale Fallberatung)")
-TAB$X1.3 <- NULL
+"Teamarbeit (kollegiale Fallberatung)",
+"Beliebtheit als Kooperationspartner*in",
+"Unbeliebtheit als Kooperationspartner*in")
+TAB$X1.5 <- NULL
 
 flextable(TAB) |> 
   width(j = 1, 3, unit = "in") |> 
@@ -304,14 +317,15 @@ flextable(TAB) |>
   bold(i = 1, bold = TRUE, part = "header") |>
   set_caption("Beispiele für soziometrische Kriterien: (Lehrkraft-Ebene)")
 ```
+\ 
 
-Das soziometrische Kriterium sollte mit Bedacht formuliert werden: Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, in der Zukunft, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug, usw.)?
+Das soziometrische Kriterium sollte mit Bedacht formuliert sein: Welche Dimension einer Sozialbeziehung soll fokussiert werden (z.B. Beliebtheit, Teamarbeit, usw.)? Soll ein konkreter zeitlicher Rahmen gesetzt werden (z.B. gestern, heute, morgen, aktuelles Schuljahr, in der Zukunft, usw.)? Soll ein konkretes Setting abgefragt werden (z.B. in der Pause, im Kunstunterricht, auf dem Ausflug, usw.)? Bei einer soziometrischen Befragung sollten ebenfalls ethische Richtlinien Beachtung finden [für eine Übersicht und Diskussion siehe @ETHIK]:
 
-Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview) durchgeführt werden.
+- Wie fühlen sich die befragten Personen (z.B. Angst/Scham)?
 
-## Ethik
+- Verstärken die Fragen (z.B. *"Wenn magst du nicht so gerne?"*) negative Emotionen?
 
-## Datenschutz
+Findet eine soziometrische Befragung im Rahmen einer wissenschaftlichen Studie mit Minderjährigen statt, dann bedarf es zusätzlich der Einholung der elterlichen Einverständniserklärungen. Schüler\*innen ohne Einverständniserklärung dürfen nicht befragt und von den anderen Mitschüler\*innen im Rahmen der Befragung nicht benannt werden bzw. dürfen die soziometrischen Daten für die Schüler\*innen ohne Einverständniserklärung nicht erhoben/gespeichert werden.
 
 ## Geschichte der Soziometrie
 

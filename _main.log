@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  20 OCT 2022 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.20)  20 OCT 2022 20:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -512,6 +512,9 @@ File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box110
 ) (./_main.aux
 
+LaTeX Warning: Label `tab:unnamed-chunk-6' multiply defined.
+
+
 LaTeX Warning: Label `tab:unnamed-chunk-23' multiply defined.
 
 )
@@ -626,7 +629,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 [4
 
 ]
-<images/cover.png, id=52, 718.8456pt x 870.6126pt>
+<images/cover.png, id=50, 718.8456pt x 870.6126pt>
 File: images/cover.png Graphic file (type png)
 <use images/cover.png>
 Package pdftex.def Info: images/cover.png  used on input line 183.
@@ -644,67 +647,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 [7
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 283.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 287.
 (c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<_main_files/figure-latex/unnamed-chunk-5-1.pdf, id=79, 469.755pt x 325.215pt>
+<_main_files/figure-latex/unnamed-chunk-5-1.pdf, id=77, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 326.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 330.
 (pdftex.def)             Requested size: 426.78961pt x 295.46973pt.
 [8] [9 <./_main_files/figure-latex/unnamed-chunk-5-1.pdf>]
 \bbl@ensure@ngerman {Kapitel} 3.
 
-Underfull \hbox (badness 1142) in paragraph at lines 340--341
+Underfull \hbox (badness 1142) in paragraph at lines 344--345
 \T1/lmr/m/n/10 statistische Beschreibung der sozialen Gruppe sinnvoll. Wir sind z.B. interessiert an den
  []
 
 [10
 
 ] [11] [12]
-<_main_files/figure-latex/unnamed-chunk-16-1.pdf, id=133, 469.755pt x 216.81pt>
+<_main_files/figure-latex/unnamed-chunk-16-1.pdf, id=134, 469.755pt x 216.81pt>
 File: _main_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-16-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-16-1.pdf  used on input line 552.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-16-1.pdf  used on input line 560.
 (pdftex.def)             Requested size: 426.78961pt x 196.97981pt.
-<_main_files/figure-latex/unnamed-chunk-18-1.pdf, id=136, 469.755pt x 180.675pt>
+[13 <./_main_files/figure-latex/unnamed-chunk-16-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-18-1.pdf, id=153, 469.755pt x 180.675pt>
 File: _main_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 575.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 583.
 (pdftex.def)             Requested size: 426.78961pt x 164.14983pt.
-[13 <./_main_files/figure-latex/unnamed-chunk-16-1.pdf>]
-Underfull \hbox (badness 1178) in paragraph at lines 596--597
+
+Underfull \hbox (badness 1178) in paragraph at lines 604--605
 []\T1/lmr/m/n/10 Zur Visualisierung der Häufigkeitstabelle wird \T1/lmtt/m/n/10 table(daten$alter) \T1/lmr/m/n/10 an den Befehl \T1/lmtt/m/n/10 pie()
  []
 
 
-Underfull \hbox (badness 4779) in paragraph at lines 604--605
+Underfull \hbox (badness 4779) in paragraph at lines 612--613
 \T1/lmr/m/n/10 objektorientierte Programmierung ist übersichtlicher (auch dies führt zur erfolgreichen
  []
 
-<_main_files/figure-latex/unnamed-chunk-22-1.pdf, id=155, 469.755pt x 325.215pt>
+[14 <./_main_files/figure-latex/unnamed-chunk-18-1.pdf>]
+<_main_files/figure-latex/unnamed-chunk-22-1.pdf, id=166, 469.755pt x 325.215pt>
 File: _main_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 623.
+Package pdftex.def Info: _main_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 631.
 (pdftex.def)             Requested size: 426.78961pt x 295.46973pt.
-[14 <./_main_files/figure-latex/unnamed-chunk-18-1.pdf>] [15 <./_main_files/figure-latex/unnamed-chunk-22-1.pdf>]
+[15 <./_main_files/figure-latex/unnamed-chunk-22-1.pdf>]
 \bbl@ensure@ngerman {Kapitel} 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--640
+Underfull \hbox (badness 10000) in paragraph at lines 653--653
 [][]\T1/lmr/m/n/10 Tabelle[] 4.1: []\T1/lmr/m/n/11 Beispiele für soziometrische Kriterien:
  []
 
 [16
 
 ]
-Underfull \hbox (badness 5878) in paragraph at lines 764--765
-[]\T1/lmr/m/n/10 Soziometrische Befragungen können schriftlich (Fragebogen) oder mündlich (Interview)
+Underfull \hbox (badness 1067) in paragraph at lines 793--794
+[]\T1/lmr/m/n/10 Das soziometrische Kriterium sollte mit Bedacht formuliert sein: Welche Dimension einer
  []
 
 [17]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 797.
+(c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 4531) in paragraph at lines 802--803
+[]\T1/lmr/m/n/10 Findet eine soziometrische Befragung im Rahmen einer wissenschaftlichen Studie mit
+ []
+
+
+Overfull \hbox (21.79245pt too wide) in paragraph at lines 802--803
+\T1/lmr/m/n/10 Minderjährigen statt, dann bedarf es zusätzlich der Einholung der elterlichen Einverständniserklärungen.
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 802--803
+\T1/lmr/m/n/10 Schüler*innen ohne Einverständniserklärung dürfen nicht befragt und von den anderen
+ []
+
+[18]
 \bbl@ensure@ngerman {Kapitel} 5.
-[18
+
+Underfull \hbox (badness 1748) in paragraph at lines 821--823
+\T1/lmr/m/it/10 Soziometrie: Messung, Darstellung, Analyse und Intervention in sozialen Beziehungen\T1/lmr/m/n/10 ,
+ []
+
+[19
 
 ] (./_main.aux)
 
@@ -712,21 +741,21 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 13683 strings out of 477031
- 219800 string characters out of 5826140
- 585969 words of memory out of 5000000
- 34517 multiletter control sequences out of 15000+600000
- 550738 words of font info for 79 fonts, out of 8000000 for 9000
+ 13717 strings out of 477031
+ 220743 string characters out of 5826140
+ 586949 words of memory out of 5000000
+ 34544 multiletter control sequences out of 15000+600000
+ 551103 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,8n,77p,996b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,77p,1133b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{erstes-beispiel-soziometrie-und-soziale-netzwerke-mit-r} has been referenced but does not exist, replaced by a fixed one
 
-{c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on _main.pdf (18 pages, 525621 bytes).
+{c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><c:/Users/pawel/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on _main.pdf (19 pages, 532189 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
